@@ -1,0 +1,17 @@
+# normal trace
+M1,M5_s,M2,M3,M4,M6,M5_r,M7,M8
+
+M1,M5_s,M2_s,M3_s,M2_r,M3_r,M4,M6,M5_r,M7,M8
+
+M1,M5_s,M2_s,M2_r,M3_s,M3_r,M4,M6,M5_r,M7,M8
+
+M1,M5_s,M2_s,M2_r,M3_s,M3_r,M4_s,M6,M4_r,M5_r,M7,M8
+
+M1,M5_s,M2_s,M2_r,M3_s,M3_r,M4_s,M6,M4_r,M5_r,M7_s,M7_r,M8
+
+M1,M5_s,M2_s,M2_r,M3_s,M3_r,M4_s,M6,M4_r,M5_r,M7,M8
+
+M1,M5_s,M2_s,M3_s,M2_r,M3_r,M4_s,M6,M4_r,M5_r,M7,M8
+
+# abnormal trace
+M1,M5_s,M2,M3,M4,M6,M5_r,M7,M8_s

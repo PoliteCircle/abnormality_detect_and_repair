@@ -1,0 +1,27 @@
+# normal trace
+Order1,Order2,SO,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,ER2,SA,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,SA,EmptyCTN,ER2,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,SA,ER2,EmptyCTN,CTNArrival,CTN,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,SA,ER2,EmptyCTN,CTN,CTNArrival,OutboundCTN1,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Man1,Man2,Man3,ER1,SA,ER2,EmptyCTN,CTN,OutboundCTN1,CTNArrival,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Declaration,Success,Appointment,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Declaration,Success,Appointment,Man1,Man2,Man3,ER1,SA,ER2,EmptyCTN,CTN,OutboundCTN1,CTNArrival,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+Order1,SO,Order2,Declaration,Success,Appointment,Man1,Man2,Man3,ER1,SA,ER2,EmptyCTN,CTN,OutboundCTN1,CTNArrival,OutboundCTN2,OutboundCTN3,ShipArrival2,CrewList,Arrival,Clearance1,Clearance2,Departure,ExpenseNote
+
+# abnormal trace
+Order1,Order2,Declaration,Success,Appointment,SO,Man1,Man2,Man3,ER1,SA,EmptyCTN,CTNArrival,ShipArrival2,CrewList

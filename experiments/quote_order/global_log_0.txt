@@ -1,0 +1,10 @@
+# normal
+M1,M2,M3
+
+M1,M2,M4
+
+# abnormal
+
+M1_s,M2,M3
+
+M1_s,M2,M4

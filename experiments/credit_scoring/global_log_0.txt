@@ -1,0 +1,8 @@
+# normal
+M1,M2,M3,M5,M6
+
+M1,M2,M4,M6
+
+# abnormal
+
+M1,M2,M3_s,M5,M6

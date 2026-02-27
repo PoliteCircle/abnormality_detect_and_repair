@@ -1,0 +1,10 @@
+# normal
+concrete_casting_programme,order,certificate1,certificate2,refuse
+
+concrete_casting_programme,order,certificate1,certificate2,accept,arrival
+
+concrete_casting_programme,order,certificate1,certificate2,accept,arrival,register_s,speciment,register_r,results
+
+# abnormal
+
+concrete_casting_programme,order,certificate1,certificate2,accept,arrival,register_s,speciment_s,register_r,results

@@ -1,0 +1,11 @@
+
+# normal
+Order,Notification_Nok
+
+Order,Notification_Ok,Payment_Request,Payment_refused_Notification
+
+Order,Notification_Ok,Payment_Request,Payment,Product
+
+# abnormal
+Order,Notification_Ok,Payment_Request,Payment
+

@@ -1,0 +1,14 @@
+############# normal
+# denial
+M1,M2,M3
+
+# permission stamp
+M1,M2,M4,M5
+
+# permission no stamp
+M1,M2,M4,M6
+
+
+
+############# abnormal
+M1,M3
