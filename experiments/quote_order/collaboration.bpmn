@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0awp0le" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.27.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0awp0le" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.45.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
   <bpmn:collaboration id="Collaboration_0hnucnd">
     <bpmn:participant id="Participant_11bpjcm" name="Client" processRef="Process_0br5w2n" />
     <bpmn:participant id="Participant_0up7r5m" name="Seller" processRef="Process_1j8sot3" />
@@ -65,10 +65,6 @@
       <bpmn:outgoing>Flow_08oii9h</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0bib569" />
     </bpmn:startEvent>
-    <bpmn:task id="Activity_1ulco8n" name="Send quote">
-      <bpmn:incoming>Flow_0nkxn3u</bpmn:incoming>
-      <bpmn:outgoing>Flow_0skpfbo</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:eventBasedGateway id="Gateway_10lg4es">
       <bpmn:incoming>Flow_0skpfbo</bpmn:incoming>
       <bpmn:outgoing>Flow_0lec7pc</bpmn:outgoing>
@@ -105,6 +101,10 @@
       <bpmn:outgoing>Flow_0hm4pd1</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1qnse1y" />
     </bpmn:intermediateCatchEvent>
+    <bpmn:task id="Activity_1ulco8n" name="Send quote">
+      <bpmn:incoming>Flow_0nkxn3u</bpmn:incoming>
+      <bpmn:outgoing>Flow_0skpfbo</bpmn:outgoing>
+    </bpmn:task>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0hnucnd">
@@ -197,10 +197,6 @@
           <dc:Bounds x="158" y="455" width="85" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1ulco8n_di" bpmnElement="Activity_1ulco8n">
-        <dc:Bounds x="430" y="390" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_10lg4es_di" bpmnElement="Gateway_10lg4es">
         <dc:Bounds x="595" y="405" width="50" height="50" />
       </bpmndi:BPMNShape>
@@ -226,16 +222,20 @@
           <dc:Bounds x="743" y="505" width="55" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ulco8n_di" bpmnElement="Activity_1ulco8n">
+        <dc:Bounds x="410" y="390" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_08oii9h_di" bpmnElement="Flow_08oii9h">
         <di:waypoint x="218" y="430" />
         <di:waypoint x="270" y="430" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0nkxn3u_di" bpmnElement="Flow_0nkxn3u">
         <di:waypoint x="370" y="430" />
-        <di:waypoint x="430" y="430" />
+        <di:waypoint x="410" y="430" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0skpfbo_di" bpmnElement="Flow_0skpfbo">
-        <di:waypoint x="530" y="430" />
+        <di:waypoint x="510" y="430" />
         <di:waypoint x="595" y="430" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0lec7pc_di" bpmnElement="Flow_0lec7pc">
