@@ -1,0 +1,11 @@
+# generated extended benchmark
+# seed: 20840809
+# model_origin: existing_bpmn_mutation
+# anomaly_type: adjacent_swap
+# injection_ground_truth: swap tokens M3 and M5 at positions 3-4
+# normal traces
+M1,M2,M3,M5,M6
+M1,M2,M4,M6
+
+# abnormal trace
+M1,M2,M5,M3,M6

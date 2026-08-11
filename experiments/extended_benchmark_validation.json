@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "manifest": "D:\\学习\\abnormality_detect_and_repair\\experiments\\extended_benchmark_manifest.json",
+  "entry_count": 154,
+  "checked_entries": 154,
+  "case_count": 14,
+  "origin_counts": {
+    "existing_bpmn_mutation": 64,
+    "synthetic_scaled_collaboration": 90
+  },
+  "anomaly_counts": {
+    "adjacent_swap": 9,
+    "choice_conflict": 30,
+    "missing_message": 51,
+    "receiver_only_observation": 18,
+    "sender_only_observation": 16,
+    "sequence_inversion": 30
+  },
+  "all_detected": true,
+  "all_strict_repair_success": true,
+  "pipeline_smoke_checked": 26,
+  "results_by_case": {
+    "airport_pass": {
+      "entry_count": 8,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "company_client": {
+      "entry_count": 8,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "concrete_casting": {
+      "entry_count": 8,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "credit_scoring": {
+      "entry_count": 8,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "qingdao_port": {
+      "entry_count": 8,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "qingdao_port_simple": {
+      "entry_count": 8,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "quote_order": {
+      "entry_count": 8,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "self_service_restaurant": {
+      "entry_count": 8,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "detected": 8,
+      "strict_repair_success": 8,
+      "model_origin": "existing_bpmn_mutation"
+    },
+    "synthetic_scale_05p_012m": {
+      "entry_count": 15,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    },
+    "synthetic_scale_07p_020m": {
+      "entry_count": 15,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    },
+    "synthetic_scale_09p_032m": {
+      "entry_count": 15,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    },
+    "synthetic_scale_12p_048m": {
+      "entry_count": 15,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    },
+    "synthetic_scale_16p_072m": {
+      "entry_count": 15,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    },
+    "synthetic_scale_20p_096m": {
+      "entry_count": 15,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "detected": 15,
+      "strict_repair_success": 15,
+      "model_origin": "synthetic_scaled_collaboration"
+    }
+  },
+  "error_count": 0,
+  "errors": []
+}

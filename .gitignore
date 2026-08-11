@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+output/
+tmp/
+_tmp_process_bpmns/
+_tmp_subprocess_bpmns/

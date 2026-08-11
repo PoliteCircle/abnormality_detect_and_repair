@@ -1,0 +1,5803 @@
+{
+  "schema_version": 1,
+  "generator": "scripts/generate_extended_benchmark.py",
+  "seed": 20260809,
+  "entry_count": 154,
+  "all_detected": true,
+  "all_strict_repair_success": true,
+  "entries": [
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_0.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S01_M005 and S01_M006",
+      "injected_messages": [
+        "S01_M005",
+        "S01_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S01_M005,S01_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "86d37ce516ada6a849081f571afdb384aaef7f0893180554e500d2b606fc8201"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_1.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S01_M007",
+      "injected_messages": [
+        "S01_M007"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_01"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S01_M007"
+        ],
+        "Partner_01": [
+          "S01_M007"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_01": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "5de72174ea9c1bf67c76617d9373359f3dddecec280feab2c9791a06fb09a59c"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_2.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S01_M010",
+      "injected_messages": [
+        "S01_M010"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S01_M010"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "7c37e5ec46e3ed33d5237e04ca199963c6b4b581f968555384935eaa96e5e0dd"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_3.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S01_M009",
+      "injected_messages": [
+        "S01_M009"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S01_M009"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "9331cb1161624136feeeff2af0f7c54bc777bd936145691cbac54eaa66294346"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_4.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S01_M001",
+      "injected_messages": [
+        "S01_M001"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_01"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S01_M001"
+        ],
+        "Partner_01": [
+          "S01_M001"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_01": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "db640d415223ee74eaea041401223072a491ab09976b9faf4d557e0c288b5901"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_5.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S01_M003",
+      "injected_messages": [
+        "S01_M003"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_01"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S01_M003"
+        ],
+        "Partner_01": [
+          "S01_M003"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_01": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "53e95641393f30a08a583ff0ad9f3d78a23096fb6acb10784e4e703527c93a69"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_6.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S01_M005 and S01_M006",
+      "injected_messages": [
+        "S01_M005",
+        "S01_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S01_M005,S01_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "268f5cea70b65ce57eed2d97137f2774a285124b9930c825f0cb1480ef892d2c"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_7.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S01_M009 and S01_M010",
+      "injected_messages": [
+        "S01_M009",
+        "S01_M010"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S01_M009,S01_M010)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "277370efc3b0a2c0e000d60293a73977e75dd02e20b7a3a310a7aa6c8b71a4f7"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_8.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S01_M001 and S01_M002",
+      "injected_messages": [
+        "S01_M001",
+        "S01_M002"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S01_M001,S01_M002)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "8ed15285b735e8ba71dae0719e0f1669d7cbb1bf49aa83bd50293362bc52e806"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_9.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S01_M001 and S01_M002",
+      "injected_messages": [
+        "S01_M001",
+        "S01_M002"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S01_M001,S01_M002)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "2702affa777d0410d55be50f9a8b80c8d1c506a46fbde3f75d4870b2588c1cb7"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_10.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S01_M012 and S01_M011 together",
+      "injected_messages": [
+        "S01_M012",
+        "S01_M011"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S01_M012,S01_M011)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "d8655c9dbe4477114abb5da06e88d29008bb207a2ff8100b0521112c7a76ac1a"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_11.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S01_M012 and S01_M011 together",
+      "injected_messages": [
+        "S01_M012",
+        "S01_M011"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S01_M012,S01_M011)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "9eab93e344e20d65c9c46ef3b505c05fc92f12b16cc29153f291223f90647bf7"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_12.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S01_M011 and S01_M012 together",
+      "injected_messages": [
+        "S01_M011",
+        "S01_M012"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S01_M012,S01_M011)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "a5e0a4474cf1e4e0947665c38c9cfeca9fa33e5e9c7a45b55cbe488e2e890986"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_13.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S01_M011 and S01_M012 together",
+      "injected_messages": [
+        "S01_M011",
+        "S01_M012"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S01_M012,S01_M011)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "a20f293ce0c816f8f56b6ef77bbe8f6068bd4a1dd3800e4a8fc93b45055b5f2e"
+    },
+    {
+      "case": "synthetic_scale_05p_012m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_05p_012m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_05p_012m/global_log_14.txt",
+      "seed": 20270809,
+      "participant_count": 5,
+      "message_flow_count": 12,
+      "normal_trace_count": 8,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S01_M012 and S01_M011 together",
+      "injected_messages": [
+        "S01_M012",
+        "S01_M011"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S01_M012,S01_M011)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "999933a4e28193dfd56ceb58d3268c4d3b419c8bc1eab57ac8c106681dad186c",
+      "log_sha256": "d531ee199e80b6ccced6dc31527694f55cf0f92aeb29b24c72f6d9c8937860a8"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_0.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S02_M006",
+      "injected_messages": [
+        "S02_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S02_M006"
+        ],
+        "Partner_02": [
+          "S02_M006"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "e365a468e25a4306f92c548c0601842fc27396cbb14d8e95bb6ba312675d14ae"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_1.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S02_M010",
+      "injected_messages": [
+        "S02_M010"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S02_M010"
+        ],
+        "Partner_02": [
+          "S02_M010"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "6813f1951ba6c38340a1d7361e8ae15868698221b64757f06720c38cb43e6dc7"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_2.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S02_M014",
+      "injected_messages": [
+        "S02_M014"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S02_M014"
+        ],
+        "Partner_02": [
+          "S02_M014"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "6bfa0912e2725a9177f81aa8927337dacc52a92f89fc1c209f07604d6996f971"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_3.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S02_M007",
+      "injected_messages": [
+        "S02_M007"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_03"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S02_M007"
+        ],
+        "Partner_03": [
+          "S02_M007"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_03": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "d6823e3133700aa4d0b0d5c1cacda9af123fa6610c83e0e67caa9f5bf468e623"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_4.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S02_M019 and S02_M020 together",
+      "injected_messages": [
+        "S02_M019",
+        "S02_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S02_M020,S02_M019)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "143e17683f79abcce88ca170f1c183f1917c09e9b928564f670c3d2a44d9b44f"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_5.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S02_M012",
+      "injected_messages": [
+        "S02_M012"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_04"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S02_M012"
+        ],
+        "Partner_04": [
+          "S02_M012"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_04": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "f70dee579d61c47b75a5347112b34d28492e40c1ab6dc9d7b4871e273c9d16b8"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_6.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S02_M013 and S02_M014",
+      "injected_messages": [
+        "S02_M013",
+        "S02_M014"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S02_M013,S02_M014)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "a4f970b9e3f64bf9f704ee14356225c5dd0f7f77fb952223f6ce27c7856ca721"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_7.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S02_M005 and S02_M006",
+      "injected_messages": [
+        "S02_M005",
+        "S02_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S02_M005,S02_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "203ae9e7f836881909182f48e4ce2d6387e735f43ce99a45036426f9ca1962d5"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_8.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S02_M009 and S02_M010",
+      "injected_messages": [
+        "S02_M009",
+        "S02_M010"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S02_M009,S02_M010)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "36c41b7ac634b9dc21105dcac3fd46942f8fe3b0b55feaf54b7ae864a58db708"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_9.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S02_M001 and S02_M002",
+      "injected_messages": [
+        "S02_M001",
+        "S02_M002"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S02_M001,S02_M002)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "a59d917e77cec125f46557f790ace978020230b3d742fd20e0cccf0e28789ec3"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_10.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S02_M020 and S02_M019 together",
+      "injected_messages": [
+        "S02_M020",
+        "S02_M019"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S02_M020,S02_M019)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "dd7b91672a3bb60d9e4cf94a0748c4567deb6f4f8dd8b7dcdbbc55f3b90a9bfe"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_11.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S02_M009 and S02_M010",
+      "injected_messages": [
+        "S02_M009",
+        "S02_M010"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S02_M009,S02_M010)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "4936886ddd0c3a5679f285d006187a5cbab092bdc28d18f2f3c3b8d1cf613c19"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_12.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S02_M019 and S02_M020 together",
+      "injected_messages": [
+        "S02_M019",
+        "S02_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S02_M020,S02_M019)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "3000fab476b12aa8bfe25a0c4afb4b681a01e9484e9d2e11cb64017351356cc7"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_13.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S02_M019 and S02_M020 together",
+      "injected_messages": [
+        "S02_M019",
+        "S02_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S02_M020,S02_M019)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "49bb5e6d8ddb297e906d277f7043fd64503836ffd4260a3d7dfbdb356934c0d7"
+    },
+    {
+      "case": "synthetic_scale_07p_020m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_07p_020m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_07p_020m/global_log_14.txt",
+      "seed": 20280809,
+      "participant_count": 7,
+      "message_flow_count": 20,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S02_M020 and S02_M019 together",
+      "injected_messages": [
+        "S02_M020",
+        "S02_M019"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S02_M020,S02_M019)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "fbebe9ae06a2e12e36eb5015cb777a6561f25132b30d4d37d0704564bfd18149",
+      "log_sha256": "ec043c2c2e09543e3344458df0647e9f1505edf2c5aa5796b58a6ad6b0939b33"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_0.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S03_M009",
+      "injected_messages": [
+        "S03_M009"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_03"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S03_M009"
+        ],
+        "Partner_03": [
+          "S03_M009"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_03": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "4eb020e1da5b28e9e7ce28cbb308801d1e98985bb780849ac64393c71aad8d87"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_1.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S03_M025 and S03_M026",
+      "injected_messages": [
+        "S03_M025",
+        "S03_M026"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S03_M025,S03_M026)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "9309e785a7973a7b75353c120b0e9dac4b154e62d6909ab56ead2aa03ee893c2"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_2.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S03_M022",
+      "injected_messages": [
+        "S03_M022"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_04"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S03_M022"
+        ],
+        "Partner_04": [
+          "S03_M022"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_04": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "3d06001cc38cfaecffd7905c3f84e02f4f878e2093167ff474dc398e39331831"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_3.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S03_M029",
+      "injected_messages": [
+        "S03_M029"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S03_M029"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "cc2a85a8b03e4be8425774ae9c11d497b39d37dae013811be321b3d6d5d045b3"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_4.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S03_M023",
+      "injected_messages": [
+        "S03_M023"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_05"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S03_M023"
+        ],
+        "Partner_05": [
+          "S03_M023"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_05": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "6a602918da90989ec44898199351d5d5975ea53e08d3bfb96c50a125b49ac7a3"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_5.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S03_M020",
+      "injected_messages": [
+        "S03_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S03_M020"
+        ],
+        "Partner_02": [
+          "S03_M020"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "b02d70cc11fa65d8e74f2d108fb67a8f3e8863d4014869753af47d538704f229"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_6.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S03_M005 and S03_M006",
+      "injected_messages": [
+        "S03_M005",
+        "S03_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S03_M005,S03_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "facedc9281e06a2c80d4193dffe99753e10f44b2a295e773dbff20aa170ad027"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_7.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S03_M017 and S03_M018",
+      "injected_messages": [
+        "S03_M017",
+        "S03_M018"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S03_M017,S03_M018)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "f6066c899a0d4b68ed8a7c1a05a0684b01113744c58196ebcaaea4f0ea76069d"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_8.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S03_M013 and S03_M014",
+      "injected_messages": [
+        "S03_M013",
+        "S03_M014"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S03_M013,S03_M014)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "19a0e67975690cabd7730cfd9349960b709c4ee19fcb788b25454f461e3c2c3d"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_9.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S03_M005 and S03_M006",
+      "injected_messages": [
+        "S03_M005",
+        "S03_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S03_M005,S03_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "7ca9dc6b1c58d5e7ff2890337564521b9e0d06ccd6435ec86ca12e30dbfe65c0"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_10.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S03_M031 and S03_M032 together",
+      "injected_messages": [
+        "S03_M031",
+        "S03_M032"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S03_M031,S03_M032)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "68bc4f2eac09dfeeb35bb30de3a406c5b8d8f1afd9c222825dcaf97ed202cbfb"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_11.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S03_M032 and S03_M031 together",
+      "injected_messages": [
+        "S03_M032",
+        "S03_M031"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S03_M031,S03_M032)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "b9737289530b7652f062c091f44c41f5abee78b4ce2bf3c9ece553301f542e42"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_12.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S03_M031 and S03_M032 together",
+      "injected_messages": [
+        "S03_M031",
+        "S03_M032"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S03_M031,S03_M032)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "9c9538abd5dc98bd024fa425f6d5cf6f196fa36fbdf0e958b5ba1485b414706b"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_13.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S03_M031 and S03_M032 together",
+      "injected_messages": [
+        "S03_M031",
+        "S03_M032"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S03_M031,S03_M032)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "1fd18bcf53e691c3a577cdb46d1fc96653b6c965e8669e604d3a000be39e6439"
+    },
+    {
+      "case": "synthetic_scale_09p_032m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_09p_032m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_09p_032m/global_log_14.txt",
+      "seed": 20290809,
+      "participant_count": 9,
+      "message_flow_count": 32,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S03_M032 and S03_M031 together",
+      "injected_messages": [
+        "S03_M032",
+        "S03_M031"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S03_M031,S03_M032)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "0ce40eab98494d06d79f6c6e241356abc6d8898ee8b141d374603a881d8c8415",
+      "log_sha256": "c6bffa88b1aaefd9f717fd0ac580889df6f894f76db3e0a639ee0f758346a429"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_0.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S04_M020",
+      "injected_messages": [
+        "S04_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S04_M020"
+        ],
+        "Partner_02": [
+          "S04_M020"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "339cdb767c707dc179d1e4798457478666d47e0e7b12834a93f02d3444cd0919"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_1.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S04_M039",
+      "injected_messages": [
+        "S04_M039"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S04_M039"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "b807a3d3b9d1e6f6615f03a4f93d500fd7f4ff91cca4c13c0322949167984093"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_2.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S04_M021",
+      "injected_messages": [
+        "S04_M021"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_03"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S04_M021"
+        ],
+        "Partner_03": [
+          "S04_M021"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_03": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "0145c3170ddf33aaf076a139c04db16cc2a4fbdc2aae187dbd8898346c081e74"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_3.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S04_M030",
+      "injected_messages": [
+        "S04_M030"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_03"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S04_M030"
+        ],
+        "Partner_03": [
+          "S04_M030"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_03": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "b24d516992c01448b077cc44ae03b78c69f85dba9c4d3e4b9e65a0580c698651"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_4.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S04_M020",
+      "injected_messages": [
+        "S04_M020"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S04_M020"
+        ],
+        "Partner_02": [
+          "S04_M020"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "222e70ffc8de8d7d023a55c9fec3642f3c5455ebfb4c0abdfa884b888ca511a4"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_5.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S04_M025 and S04_M026",
+      "injected_messages": [
+        "S04_M025",
+        "S04_M026"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S04_M025,S04_M026)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "35524a451f115c76a2143bfe9ebee1c3ac47eef31b4650728446fe8510bda9ee"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_6.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S04_M025 and S04_M026",
+      "injected_messages": [
+        "S04_M025",
+        "S04_M026"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S04_M025,S04_M026)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "32d1872587292ab13b3bedb80b42a0aca6b47229d3d09d063be57b079447b4c4"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_7.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S04_M005 and S04_M006",
+      "injected_messages": [
+        "S04_M005",
+        "S04_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S04_M005,S04_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "a38872e2038ff62fc36050cb045382a4616a8dbf2ca0ce2491ade30c46b430a7"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_8.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S04_M045 and S04_M046",
+      "injected_messages": [
+        "S04_M045",
+        "S04_M046"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S04_M045,S04_M046)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "59f7137514bdc5f4f8f2ac32efef3c4753b96f528b8b8d04894ced441d4c43f5"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_9.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S04_M037 and S04_M038",
+      "injected_messages": [
+        "S04_M037",
+        "S04_M038"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S04_M037,S04_M038)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "b1ef337e562f1892a6cb50c09c2817ef6ce34b9d844a578ab0383f7997358365"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_10.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S04_M048 and S04_M047 together",
+      "injected_messages": [
+        "S04_M048",
+        "S04_M047"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S04_M047,S04_M048)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "77e9d0b139770736de2e5575107167a52ffe66db7c3d657bce422951a59492c8"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_11.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S04_M047 and S04_M048 together",
+      "injected_messages": [
+        "S04_M047",
+        "S04_M048"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S04_M047,S04_M048)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "f3462af38877d6933f225a7a70105c3a03dc9b6ccca75760c8f96aa8536431e3"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_12.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S04_M047 and S04_M048 together",
+      "injected_messages": [
+        "S04_M047",
+        "S04_M048"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S04_M047,S04_M048)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "43eb3a012c09a24d1147b254f2611960eddc136b1198b160f8bd7d2c86d9d272"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_13.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S04_M047 and S04_M048 together",
+      "injected_messages": [
+        "S04_M047",
+        "S04_M048"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S04_M047,S04_M048)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "299c2b5f6b1034b450e736d321085c9695d7370161a7f1a9c06fe06456450e3c"
+    },
+    {
+      "case": "synthetic_scale_12p_048m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_12p_048m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_12p_048m/global_log_14.txt",
+      "seed": 20300809,
+      "participant_count": 12,
+      "message_flow_count": 48,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S04_M047 and S04_M048 together",
+      "injected_messages": [
+        "S04_M047",
+        "S04_M048"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S04_M047,S04_M048)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "81ddf9f9e59c65ba418da4496304fbdef9d2f3ce8046cf8b891cb3e124250bad",
+      "log_sha256": "25908d86c65653314c1649b6426bbc7a4d10bd85230d8f658f458c5c5151059d"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_0.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S05_M045",
+      "injected_messages": [
+        "S05_M045"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_06"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S05_M045"
+        ],
+        "Partner_06": [
+          "S05_M045"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_06": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "3f971d736a85f5d4d734ef11a5210b844aaac5fded2fccc965e365aab7e21d67"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_1.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S05_M054",
+      "injected_messages": [
+        "S05_M054"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_02"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S05_M054"
+        ],
+        "Partner_02": [
+          "S05_M054"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_02": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "d3b65c366b5996e3ba59b1bfca7616c77d448c8637a826e2725f11941d47005e"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_2.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S05_M033 and S05_M034",
+      "injected_messages": [
+        "S05_M033",
+        "S05_M034"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S05_M033,S05_M034)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "c2002f4499d40730d7127be352674c2c780d6211d2723d7f51df04879133708a"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_3.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S05_M006",
+      "injected_messages": [
+        "S05_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_06"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S05_M006"
+        ],
+        "Partner_06": [
+          "S05_M006"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_06": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "8af3aa0dce2dd1627b29021f1d1a5320d54a1fe4167510a0310230de83fbe48e"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_4.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S05_M066",
+      "injected_messages": [
+        "S05_M066"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S05_M066"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "3bc306b129550d747fd356320186b2c8600a024dcd94ed6cce76152731b9d661"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_5.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S05_M063",
+      "injected_messages": [
+        "S05_M063"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S05_M063"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "2161757ffe7bf75dc2f15a13b3111aba4c07d78164f880cd4dae1e8184c32af7"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_6.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S05_M049 and S05_M050",
+      "injected_messages": [
+        "S05_M049",
+        "S05_M050"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S05_M049,S05_M050)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "eda4fc49431c4903a779abef315969e8a678c160aae98bbf6b08488c148b8780"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_7.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S05_M001 and S05_M002",
+      "injected_messages": [
+        "S05_M001",
+        "S05_M002"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S05_M001,S05_M002)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "6df81331f4f704f6fb458c788bffae366ba898342ac3352a4bef45f674adc91e"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_8.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S05_M061 and S05_M062",
+      "injected_messages": [
+        "S05_M061",
+        "S05_M062"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S05_M061,S05_M062)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "ac9442081a36b9e5ad5a05780e159bc3567f10a621955a9ce4cda6359ffb973f"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_9.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S05_M029 and S05_M030",
+      "injected_messages": [
+        "S05_M029",
+        "S05_M030"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S05_M029,S05_M030)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "6a3a8dbb111a0a74dca1b0fa1241041482395ea323ba562456aff46139634ca2"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_10.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S05_M071 and S05_M072 together",
+      "injected_messages": [
+        "S05_M071",
+        "S05_M072"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S05_M072,S05_M071)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "2fdb1a3d7e00bf39133e0af41d8ef1d4df47b48997bdaffb2c5983094dbfd4bc"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_11.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S05_M071 and S05_M072 together",
+      "injected_messages": [
+        "S05_M071",
+        "S05_M072"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S05_M072,S05_M071)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "acfe01e90bc2ba0b08f4e15f024ead70cefcf289a34f3ac842e3661f8a9e8463"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_12.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S05_M072 and S05_M071 together",
+      "injected_messages": [
+        "S05_M072",
+        "S05_M071"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S05_M072,S05_M071)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "5e9f8ce2430ad10d357f8a4b097e9415e214c3a0d91850d249c680f0622c6181"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_13.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S05_M071 and S05_M072 together",
+      "injected_messages": [
+        "S05_M071",
+        "S05_M072"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S05_M072,S05_M071)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "f12ff45c69040fa7d14b4678595b49e89dbd6e038b2251ad9d72d22ca04d632c"
+    },
+    {
+      "case": "synthetic_scale_16p_072m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_16p_072m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_16p_072m/global_log_14.txt",
+      "seed": 20310809,
+      "participant_count": 16,
+      "message_flow_count": 72,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S05_M071 and S05_M072 together",
+      "injected_messages": [
+        "S05_M071",
+        "S05_M072"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S05_M072,S05_M071)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "34a531169776fec990f72eb03f308e0e81aafeecfcbd1dbff71f76f2a124bc93",
+      "log_sha256": "7bc46d297e2e3deb1d3f25b84f13c4c301a4d9b28a787b1ca24b8c09afc2a9f3"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_0.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S06_M067",
+      "injected_messages": [
+        "S06_M067"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_16"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S06_M067"
+        ],
+        "Partner_16": [
+          "S06_M067"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_16": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "e8de35e75389ccdf936098e380f8d7b80f0657c3415a808fedf6cd3c605da5ed"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_1.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S06_M078",
+      "injected_messages": [
+        "S06_M078"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S06_M078"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "84e40bdccf8e8176dc7d8eda369b08e2f808a30f8608a6cfecc1f4058a5a03d1"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_2.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S06_M065 and S06_M066",
+      "injected_messages": [
+        "S06_M065",
+        "S06_M066"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S06_M065,S06_M066)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "7afc9fe8ed6bc21517bb8a30a730332d5f286ae4d17acab6eafdb58000665cca"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_3.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S06_M054",
+      "injected_messages": [
+        "S06_M054"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_03"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S06_M054"
+        ],
+        "Partner_03": [
+          "S06_M054"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_03": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "66c364aa05c1c8dfef3958e5de0e03bba135abdde2208c42c0026e6352d07668"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_4.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S06_M082",
+      "injected_messages": [
+        "S06_M082"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S06_M082"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "ece62d0b783408f3cd1b6d05dc90372344f875b66830880b6c09cd872c4df22a"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_5.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete message S06_M016",
+      "injected_messages": [
+        "S06_M016"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator",
+        "Partner_16"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "S06_M016"
+        ],
+        "Partner_16": [
+          "S06_M016"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          2
+        ],
+        "Partner_16": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "277f362532441c57480ba872e6ce5ade0d953c47c6b372c677b40b265439aea3"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_6.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S06_M005 and S06_M006",
+      "injected_messages": [
+        "S06_M005",
+        "S06_M006"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S06_M005,S06_M006)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "d1420fb3498108cb8b35c83c6d2706ae67e35f1f697713a3a4d42323d4287ac0"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_7.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S06_M021 and S06_M022",
+      "injected_messages": [
+        "S06_M021",
+        "S06_M022"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S06_M021,S06_M022)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "18300cc84a371d7f595fb9d86138f914e4643a324218584a93ac2b395c22a735"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_8.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S06_M073 and S06_M074",
+      "injected_messages": [
+        "S06_M073",
+        "S06_M074"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S06_M073,S06_M074)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "b2a49bdcd57aeddbf4748ee09a94699358afd7030a0956bd558cb4ac90fec4e2"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_9.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sequence_inversion",
+      "injection_ground_truth": "swap sequential messages S06_M013 and S06_M014",
+      "injected_messages": [
+        "S06_M013",
+        "S06_M014"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          ".(S06_M013,S06_M014)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "d98b8998968da8f2305e74616a7df6e57b71e3a337dd3eedc60119f20ff8a6c1"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_10.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S06_M096 and S06_M095 together",
+      "injected_messages": [
+        "S06_M096",
+        "S06_M095"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S06_M096,S06_M095)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "7493eb94e8b33328b10aeca97933e0665d29555bd40ec46cf8cb482108d89ebe"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_11.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S06_M096 and S06_M095 together",
+      "injected_messages": [
+        "S06_M096",
+        "S06_M095"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S06_M096,S06_M095)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "7b52f6808cc92c11cd9071e9bdc99d6858d1004d0d1fe54f317bff7756189002"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_12.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S06_M095 and S06_M096 together",
+      "injected_messages": [
+        "S06_M095",
+        "S06_M096"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S06_M096,S06_M095)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "0c72e8455ca422c62ae26decc31260aefcc124963191f9864dc1ff63b2e05948"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_13.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S06_M095 and S06_M096 together",
+      "injected_messages": [
+        "S06_M095",
+        "S06_M096"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S06_M096,S06_M095)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "be7582a89c2715aa08e51f6dbfd48e7146dd8e1a3812425dc80b3c9a43be0623"
+    },
+    {
+      "case": "synthetic_scale_20p_096m",
+      "model_origin": "synthetic_scaled_collaboration",
+      "bpmn_file": "experiments/synthetic_scale_20p_096m/collaboration.bpmn",
+      "log_file": "experiments/synthetic_scale_20p_096m/global_log_14.txt",
+      "seed": 20320809,
+      "participant_count": 20,
+      "message_flow_count": 96,
+      "normal_trace_count": 12,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "choice_conflict",
+      "injection_ground_truth": "execute mutually exclusive messages S06_M095 and S06_M096 together",
+      "injected_messages": [
+        "S06_M095",
+        "S06_M096"
+      ],
+      "expected_participants": [
+        "Coordinator"
+      ],
+      "detected_participants": [
+        "Coordinator"
+      ],
+      "detected_minas": {
+        "Coordinator": [
+          "+(S06_M096,S06_M095)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Coordinator": [
+          8
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "75acd17ee34fda1b712094f9080e70619fcaa14c6d52792f75c5ee31d6fcbdf0",
+      "log_sha256": "de55e7802a9c66f1cc765376417da702fccea8de21c8e6f054569977cd5bec8f"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_100.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens ShipArrival2 and CrewList at positions 16-17",
+      "injected_messages": [
+        "ShipArrival2",
+        "CrewList"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Shipping_Agency"
+      ],
+      "detected_minas": {
+        "Shipping_Agency": [
+          ".(ShipArrival2,CrewList)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Shipping_Agency": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "037f3d99c145554a522b05b7707db5fc01637094ae1ecf610bbdd766469d3a8d"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_101.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace ShipArrival2 with ShipArrival2_r at position 16",
+      "injected_messages": [
+        "ShipArrival2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Shipping_Agency"
+      ],
+      "detected_minas": {
+        "Shipping_Agency": [
+          "ShipArrival2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Shipping_Agency": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "455200436e10f2ac12eeefb0ff7a86f4c7143cbe331158928513080d894c9380"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_102.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace CTNArrival with CTNArrival_r at position 12",
+      "injected_messages": [
+        "CTNArrival"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Depot"
+      ],
+      "detected_minas": {
+        "Depot": [
+          "CTNArrival"
+        ]
+      },
+      "strict_rule_ids": {
+        "Depot": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "958f272a04f5069fffde76fc358e43602a2e0d8585f13c09fd09b3def4d85ffa"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_103.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token Clearance2 at position 23",
+      "injected_messages": [
+        "Clearance2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Customs",
+        "Container_Terminal"
+      ],
+      "detected_minas": {
+        "Customs": [
+          "Clearance2"
+        ],
+        "Container_Terminal": [
+          "Clearance2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Customs": [
+          2
+        ],
+        "Container_Terminal": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "723b7331f47021f94007242a39a2f01f5e0f1c818c1f763bb91113b1f578a05d"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_104.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token OutboundCTN3 at position 15",
+      "injected_messages": [
+        "OutboundCTN3"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Container_Terminal",
+        "Depot"
+      ],
+      "detected_minas": {
+        "Container_Terminal": [
+          "OutboundCTN3"
+        ],
+        "Depot": [
+          "OutboundCTN3"
+        ]
+      },
+      "strict_rule_ids": {
+        "Container_Terminal": [
+          2
+        ],
+        "Depot": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "c2d883c39caf791fc2ce88181217716d02472bf88467a60613e0575450cf40c2"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_105.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token ER1 at position 7",
+      "injected_messages": [
+        "ER1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Freight_Forwarder",
+        "Shipping_Agency"
+      ],
+      "detected_minas": {
+        "Freight_Forwarder": [
+          "ER1"
+        ],
+        "Shipping_Agency": [
+          "ER1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Freight_Forwarder": [
+          2
+        ],
+        "Shipping_Agency": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "83d84c30c32cbf2d399f8ef411677434918513d29a03fc405694f86b77eaec55"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_106.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token Appointment at position 20",
+      "injected_messages": [
+        "Appointment"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Customs_Broker",
+        "Customs"
+      ],
+      "detected_minas": {
+        "Customs_Broker": [
+          "Appointment"
+        ],
+        "Customs": [
+          "Appointment"
+        ]
+      },
+      "strict_rule_ids": {
+        "Customs_Broker": [
+          2
+        ],
+        "Customs": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "73ddaf0223beb5d19711b2de4b7b0722179b0815928233e406341108e041a21a"
+    },
+    {
+      "case": "qingdao_port",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port/global_log_107.txt",
+      "seed": 20770809,
+      "participant_count": 9,
+      "message_flow_count": 25,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace Departure with Departure_s at position 24",
+      "injected_messages": [
+        "Departure"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Shipping_Agency"
+      ],
+      "detected_minas": {
+        "Shipping_Agency": [
+          "Departure"
+        ]
+      },
+      "strict_rule_ids": {
+        "Shipping_Agency": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "9c00eb67ed5e71f9c9a2213c5c05102d44e29f6182c2355fd5d6d1625327282b",
+      "log_sha256": "0ab26c16a42e777cdb11503ffd08b4ec9987e76cb2936b296765671e81ad23f3"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_100.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M5_r at position 9",
+      "injected_messages": [
+        "M5"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "port"
+      ],
+      "detected_minas": {
+        "port": [
+          "M5"
+        ]
+      },
+      "strict_rule_ids": {
+        "port": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "00295455d7083946bd696707bdc39be76009132550b8621a648f73a16efc7980"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_101.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M4 at position 7",
+      "injected_messages": [
+        "M4"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "forwarder",
+        "port"
+      ],
+      "detected_minas": {
+        "forwarder": [
+          "M4"
+        ],
+        "port": [
+          "M4"
+        ]
+      },
+      "strict_rule_ids": {
+        "forwarder": [
+          2
+        ],
+        "port": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "11f6fcebfc671847333fc2cf96514c7003a1e84e3d82f741134db3ce2587ff75"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_102.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M2 with M2_s at position 3",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "forwarder"
+      ],
+      "detected_minas": {
+        "forwarder": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "forwarder": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "acf3b67f979d6304f77bd4ef1896b86a253f449b4f76bcf9a7c1a68830f3a241"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_103.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M1 at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "forwarder",
+        "agency"
+      ],
+      "detected_minas": {
+        "forwarder": [
+          "M1"
+        ],
+        "agency": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "forwarder": [
+          2
+        ],
+        "agency": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "51197adb6bac4f159b51e5a076a3152657352e4b230e2ac063e62a7f31668cea"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_104.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M6 with M6_s at position 8",
+      "injected_messages": [
+        "M6"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "port"
+      ],
+      "detected_minas": {
+        "port": [
+          "M6"
+        ]
+      },
+      "strict_rule_ids": {
+        "port": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "79b13ed5f8a729aa3bf418118f41b1e96d8326a5ea1c6baf68e1c4dbe180126b"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_105.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M8 at position 11",
+      "injected_messages": [
+        "M8"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "port"
+      ],
+      "detected_minas": {
+        "port": [
+          "M8"
+        ]
+      },
+      "strict_rule_ids": {
+        "port": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "c1c23b5c740e1b65ade1d7459a13d8dbe9d63e1b077b6c637162c42b8c6ca0d7"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_106.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "forwarder"
+      ],
+      "detected_minas": {
+        "forwarder": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "forwarder": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "c3cde7a8c17177b09e8652389a20e27acdbf8796cbb7a913b574128a6801d0cf"
+    },
+    {
+      "case": "qingdao_port_simple",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/qingdao_port_simple/collaboration.bpmn",
+      "log_file": "experiments/qingdao_port_simple/global_log_107.txt",
+      "seed": 20780809,
+      "participant_count": 3,
+      "message_flow_count": 8,
+      "normal_trace_count": 7,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens M2 and M3 at positions 3-4",
+      "injected_messages": [
+        "M2",
+        "M3"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "forwarder",
+        "agency"
+      ],
+      "detected_minas": {
+        "forwarder": [
+          ".(M2,M3)"
+        ],
+        "agency": [
+          ".(M2,M3)"
+        ]
+      },
+      "strict_rule_ids": {
+        "forwarder": [
+          5
+        ],
+        "agency": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "430ef53fa65c2a96d9a3a020abf1d790ce1fe0e037c0b87197bb6216d3fa0ff9",
+      "log_sha256": "7ddcb7f5896e7ba273a98187fba0d24a3640bbd530b14267e7f9f4e826c8ee00"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_100.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace concrete_casting_programme with concrete_casting_programme_s at position 1",
+      "injected_messages": [
+        "concrete_casting_programme"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Works_manager"
+      ],
+      "detected_minas": {
+        "Works_manager": [
+          "concrete_casting_programme"
+        ]
+      },
+      "strict_rule_ids": {
+        "Works_manager": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "9d499e10bd7945c412fff455c9ac313f752028a9ed16c204398b18a3a815e2f0"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_101.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace order with order_r at position 2",
+      "injected_messages": [
+        "order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Building_contractor"
+      ],
+      "detected_minas": {
+        "Building_contractor": [
+          "order"
+        ]
+      },
+      "strict_rule_ids": {
+        "Building_contractor": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "5f235e5aec9169b0e8e37827ce15fcd28b1a5af46e7071c4f6d1dd7583377c72"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_102.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens register_s and speciment at positions 7-8",
+      "injected_messages": [
+        "register",
+        "speciment"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Building_contractor"
+      ],
+      "detected_minas": {
+        "Building_contractor": [
+          ".(register,speciment)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Building_contractor": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "68c48e8333c8e52eee7b06cf15e5b0e8aaa62c77bc31c800f6c022cf5d3a8317"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_103.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace certificate1 with certificate1_r at position 3",
+      "injected_messages": [
+        "certificate1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Batching_plant"
+      ],
+      "detected_minas": {
+        "Batching_plant": [
+          "certificate1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Batching_plant": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "e00a90dd87ae2d9bea0b0b76451ed1a2e6c9c3f2ec6eeddde3ca2b66a43755de"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_104.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens register_r and results at positions 9-10",
+      "injected_messages": [
+        "register",
+        "results"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Laboratory"
+      ],
+      "detected_minas": {
+        "Laboratory": [
+          ".(register,+(tau,results))"
+        ]
+      },
+      "strict_rule_ids": {
+        "Laboratory": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "3db6da02e3723a217dc6f189bbc6d0178cb7cb2b885a159561384a1706378848"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_105.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token certificate1 at position 3",
+      "injected_messages": [
+        "certificate1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Works_manager",
+        "Batching_plant"
+      ],
+      "detected_minas": {
+        "Works_manager": [
+          "certificate1"
+        ],
+        "Batching_plant": [
+          "certificate1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Works_manager": [
+          2
+        ],
+        "Batching_plant": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "dcec5761ebfb3a25cb90ab09424a75792a5fac350e8aa0cbe312716900229988"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_106.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens concrete_casting_programme and order at positions 1-2",
+      "injected_messages": [
+        "concrete_casting_programme",
+        "order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Building_contractor"
+      ],
+      "detected_minas": {
+        "Building_contractor": [
+          ".(concrete_casting_programme,order)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Building_contractor": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "08a570d7dce6280cc21a4033ea17d76ba435d51d0f7a7b24a8a2b7d49fa42cb4"
+    },
+    {
+      "case": "concrete_casting",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/concrete_casting/collaboration.bpmn",
+      "log_file": "experiments/concrete_casting/global_log_107.txt",
+      "seed": 20790809,
+      "participant_count": 4,
+      "message_flow_count": 10,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token certificate2 at position 4",
+      "injected_messages": [
+        "certificate2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Batching_plant"
+      ],
+      "detected_minas": {
+        "Batching_plant": [
+          "certificate2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Batching_plant": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "b7fa36215c81f7e8a5584cb93145396e4155de36bea13289453c6030ba4c4832",
+      "log_sha256": "d09d848e0017b70e9409415598f4a5ef909f4b7b30a14d0e45af46dabebfcea9"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_100.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Airport"
+      ],
+      "detected_minas": {
+        "Airport": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Airport": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "dd8fe02831b55e52978ca14c4c89ce06224c7ce6d1a4e02cf6c269ef3c197e48"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_101.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M4 at position 3",
+      "injected_messages": [
+        "M4"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Passenger",
+        "Airport"
+      ],
+      "detected_minas": {
+        "Passenger": [
+          "M4"
+        ],
+        "Airport": [
+          "M4"
+        ]
+      },
+      "strict_rule_ids": {
+        "Passenger": [
+          2
+        ],
+        "Airport": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "aaa4e46705999c7a3760d22037642a6827ea07c778cd3578ceb433df8f169bf5"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_102.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M2 at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Passenger",
+        "Airport"
+      ],
+      "detected_minas": {
+        "Passenger": [
+          "M2"
+        ],
+        "Airport": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Passenger": [
+          2
+        ],
+        "Airport": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "6837cda59284ea4b973a3201bb00576a01c2dec24004d2ac52cb68a7bea83a92"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_103.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M1 with M1_s at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Passenger"
+      ],
+      "detected_minas": {
+        "Passenger": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Passenger": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "ad25101027cd99ec0280f64cfce9c221b06345b2f3eaa637455d5526e4c9de4a"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_104.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens M1 and M2 at positions 1-2",
+      "injected_messages": [
+        "M1",
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Passenger",
+        "Airport"
+      ],
+      "detected_minas": {
+        "Passenger": [
+          ".(M1,M2)"
+        ],
+        "Airport": [
+          ".(M1,M2)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Passenger": [
+          5
+        ],
+        "Airport": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "48f3606f737d01a84545f23a2821677f4dc5e1510aa369de9d5807efab47507a"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_105.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Airport"
+      ],
+      "detected_minas": {
+        "Airport": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Airport": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "087d04f092552858a08a51a188294be4ca4d3b788c21500a2b46ebf9395296d7"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_106.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M4 with M4_r at position 3",
+      "injected_messages": [
+        "M4"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Airport"
+      ],
+      "detected_minas": {
+        "Airport": [
+          "M4"
+        ]
+      },
+      "strict_rule_ids": {
+        "Airport": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "0dd7037e4bb9604269769af14ffd3a89150aa17486e8e9b152e962cf302e714d"
+    },
+    {
+      "case": "airport_pass",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/airport_pass/collaboration.bpmn",
+      "log_file": "experiments/airport_pass/global_log_107.txt",
+      "seed": 20800809,
+      "participant_count": 2,
+      "message_flow_count": 6,
+      "normal_trace_count": 3,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M2 with M2_s at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Passenger"
+      ],
+      "detected_minas": {
+        "Passenger": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Passenger": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "97903995241708014edde94e7bda6b7f366f763d89d4803ce5065aff553a490f",
+      "log_sha256": "36536211c1a4a6d1fe07cabd5c879b27e4bbcba849f8bbe101e217f4981b3d92"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_100.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens Notification_Ok and Payment_Request at positions 2-3",
+      "injected_messages": [
+        "Notification_Ok",
+        "Payment_Request"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Company"
+      ],
+      "detected_minas": {
+        "Client": [
+          ".(Notification_Ok,Payment_Request)"
+        ],
+        "Company": [
+          ".(Notification_Ok,Payment_Request)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          5
+        ],
+        "Company": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "78aeda44cd2a593b1a6d4d18661d92971936ba6d99e051d856a58df5f2075711"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_101.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace Payment with Payment_s at position 4",
+      "injected_messages": [
+        "Payment"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Company"
+      ],
+      "detected_minas": {
+        "Company": [
+          "Payment"
+        ]
+      },
+      "strict_rule_ids": {
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "b73cb0af977b2c0f562a8ed2b48df9604b55ef22c2e9397da698efa4080ad702"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_102.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token Order at position 1",
+      "injected_messages": [
+        "Order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Company"
+      ],
+      "detected_minas": {
+        "Client": [
+          "Order"
+        ],
+        "Company": [
+          "Order"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ],
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "db630792ecee46466b2154254e13fa3e90af3bf2818e71f98c11d855ad9d8efe"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_103.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace Order with Order_s at position 1",
+      "injected_messages": [
+        "Order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Company"
+      ],
+      "detected_minas": {
+        "Company": [
+          "Order"
+        ]
+      },
+      "strict_rule_ids": {
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "c2b9402f71daa96530603f90390777a9995b34fe935e8a342a5c746707fd35d7"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_104.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token Payment at position 4",
+      "injected_messages": [
+        "Payment"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Company"
+      ],
+      "detected_minas": {
+        "Client": [
+          "Payment"
+        ],
+        "Company": [
+          "Payment"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ],
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "4800be2d2c2963defc226dbd35fa393767ed2bb851a86bb5699b3fa613eb24d2"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_105.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace Order with Order_s at position 1",
+      "injected_messages": [
+        "Order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Company"
+      ],
+      "detected_minas": {
+        "Company": [
+          "Order"
+        ]
+      },
+      "strict_rule_ids": {
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "0d3536883961f926d1be2d4cbe47e099f0d047cb5770512c0a10ec00817c9460"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_106.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace Order with Order_r at position 1",
+      "injected_messages": [
+        "Order"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client"
+      ],
+      "detected_minas": {
+        "Client": [
+          "Order"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "47d609fa17a5f6a39af4f4e779d161324867101ff6f35b6b8e963775257047a3"
+    },
+    {
+      "case": "company_client",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/company_client/collaboration.bpmn",
+      "log_file": "experiments/company_client/global_log_107.txt",
+      "seed": 20810809,
+      "participant_count": 2,
+      "message_flow_count": 7,
+      "normal_trace_count": 4,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token Notification_Ok at position 2",
+      "injected_messages": [
+        "Notification_Ok"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Company"
+      ],
+      "detected_minas": {
+        "Client": [
+          "Notification_Ok"
+        ],
+        "Company": [
+          "Notification_Ok"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ],
+        "Company": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "7538d3e2ac1779c0425f23f23c3a5c46251702a8d01854d69cfcedfc07418b48",
+      "log_sha256": "78f2457085bcc51d8c8ad4bb177097a3af070971216ef244317e38039df3ed0b"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_100.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M5 with M5_r at position 5",
+      "injected_messages": [
+        "M5"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Chef_meal_preparation"
+      ],
+      "detected_minas": {
+        "Chef_meal_preparation": [
+          "M5"
+        ]
+      },
+      "strict_rule_ids": {
+        "Chef_meal_preparation": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "1e6a7d6ec9980621dfec117913e892d7f151bf7a4c8cecf091db89a00166c51d"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_101.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M1 with M1_s at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Employee_order_processing"
+      ],
+      "detected_minas": {
+        "Employee_order_processing": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Employee_order_processing": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "8665c6dca629fb6eed2c76d2441cfbd302e0d345a35a95d778108591acba370e"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_102.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M3 with M3_r at position 3",
+      "injected_messages": [
+        "M3"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Employee_order_processing"
+      ],
+      "detected_minas": {
+        "Employee_order_processing": [
+          "M3"
+        ]
+      },
+      "strict_rule_ids": {
+        "Employee_order_processing": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "9fdaafae06d1781862a513140230225eee0a1eec650fa2481cfdb21cb15ef1a5"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_103.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M5 at position 5",
+      "injected_messages": [
+        "M5"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Employee_order_processing",
+        "Chef_meal_preparation"
+      ],
+      "detected_minas": {
+        "Employee_order_processing": [
+          "M5"
+        ],
+        "Chef_meal_preparation": [
+          "M5"
+        ]
+      },
+      "strict_rule_ids": {
+        "Employee_order_processing": [
+          2
+        ],
+        "Chef_meal_preparation": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "7f576e4c09508bcbe7b1103f2a88a4ed910f2be2cd2da44e105daa409323886a"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_104.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Guest_food_consumption"
+      ],
+      "detected_minas": {
+        "Guest_food_consumption": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Guest_food_consumption": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "d6d8f3251308a1b1b7e8b3720e74573695c84805b46b4b7a4090f3f04b7425af"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_105.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M2 at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Guest_food_consumption",
+        "Employee_order_processing"
+      ],
+      "detected_minas": {
+        "Guest_food_consumption": [
+          "M2"
+        ],
+        "Employee_order_processing": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Guest_food_consumption": [
+          2
+        ],
+        "Employee_order_processing": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "baf19d404a0ec4aaf039fd92b9741e71ca2a39b9c73dc069d52ea829fc908aef"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_106.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M7 at position 7",
+      "injected_messages": [
+        "M7"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Guest_food_consumption"
+      ],
+      "detected_minas": {
+        "Guest_food_consumption": [
+          "M7"
+        ]
+      },
+      "strict_rule_ids": {
+        "Guest_food_consumption": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "8c058438b0662d33e1562f49fdaf2dfef07c92b0da916b43d8f71d1fe3d2b33f"
+    },
+    {
+      "case": "self_service_restaurant",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/self_service_restaurant/collaboration.bpmn",
+      "log_file": "experiments/self_service_restaurant/global_log_107.txt",
+      "seed": 20820809,
+      "participant_count": 3,
+      "message_flow_count": 7,
+      "normal_trace_count": 1,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens M1 and M2 at positions 1-2",
+      "injected_messages": [
+        "M1",
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Guest_food_consumption",
+        "Employee_order_processing"
+      ],
+      "detected_minas": {
+        "Guest_food_consumption": [
+          ".(M1,M2)"
+        ],
+        "Employee_order_processing": [
+          ".(M1,M2)"
+        ]
+      },
+      "strict_rule_ids": {
+        "Guest_food_consumption": [
+          5
+        ],
+        "Employee_order_processing": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "36fa41bdb249deac1b4b6edeb50f9aab3ac049b440740bb5252712eefd577e38",
+      "log_sha256": "8f748d38907446ef5e63d796ffb0cd19ad20c6182e55fd6bf21eef56aaaa1396"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_100.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M2 with M2_s at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "2ebf80672d0f6b13f35e7670c0c4221aa591a8007518baf2fb56249b73989f65"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_101.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "be8ce0d3eda74ddfb3b99cb2c62bd0055928c7a30d0a9cc4e0b15131e594c021"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_102.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M1 at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Seller"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M1"
+        ],
+        "Seller": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ],
+        "Seller": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "c90d6e725085e0b0fac907e1a5ad87864a9bacf77dde0005d810bdc07fd2a615"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_103.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "b1f21c20c407f6eeef25a18d9d1d3d9c3643a566237b67b956452d5fc62379d4"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_104.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M2 at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client",
+        "Seller"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M2"
+        ],
+        "Seller": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ],
+        "Seller": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "99476a59dd55b432945dcd951086bc90b316c72788a1cdcea90bfc3da2db0828"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_105.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M1 with M1_s at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Seller"
+      ],
+      "detected_minas": {
+        "Seller": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Seller": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "218a6aff42d01f6c58451430f09338edfeaf572045218bf0ed3904cbf923543c"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_106.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M1 with M1_s at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Seller"
+      ],
+      "detected_minas": {
+        "Seller": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "Seller": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "79db3d9bff701b2cac978361dbd495a3963eed75c37106795849a28504cd8e1c"
+    },
+    {
+      "case": "quote_order",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/quote_order/collaboration.bpmn",
+      "log_file": "experiments/quote_order/global_log_107.txt",
+      "seed": 20830809,
+      "participant_count": 2,
+      "message_flow_count": 4,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M2 with M2_s at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "Client"
+      ],
+      "detected_minas": {
+        "Client": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "Client": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "d6254bd1a5a8f6319b25b5b872e20f17ed13f4f53da9e2dacec2da1615eb2392",
+      "log_sha256": "44e4ace1e2e6f78116fa31e176d679a6191fced999420dfecffc99c75dd2d6e7"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_100.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring_frontend__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring_frontend__bank_": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring_frontend__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "81abd3327644caeb854467133b78987dc8e3fb8d02ba4ef514cfc089090f474c"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_101.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M6 with M6_r at position 4",
+      "injected_messages": [
+        "M6"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring__bank_": [
+          "M6"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "54a42ac7e4aa0451696b9ff88774d8fd36b56fd8d5d3e4412f25920813872251"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_102.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M5 with M5_s at position 4",
+      "injected_messages": [
+        "M5"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring__bank_": [
+          "M5"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "55fe94e9ef7cf30de073cc1268ae8efde83468f7f58cb67f5675af908e625d1f"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_103.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "missing_message",
+      "injection_ground_truth": "delete token M1 at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring_frontend__bank_",
+        "credit_scoring__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring_frontend__bank_": [
+          "M1"
+        ],
+        "credit_scoring__bank_": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring_frontend__bank_": [
+          2
+        ],
+        "credit_scoring__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "7ccf0ed5c8a1795a166065a21908854f30698fd327ccd068dff6e29d560b3f20"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_104.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M2 with M2_r at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring__bank_": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "6a8ff2b558a06ed20de1b5801143976120cc43453311972d326c34434c904dc3"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_105.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "sender_only_observation",
+      "injection_ground_truth": "replace M2 with M2_s at position 2",
+      "injected_messages": [
+        "M2"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "scoring_service"
+      ],
+      "detected_minas": {
+        "scoring_service": [
+          "M2"
+        ]
+      },
+      "strict_rule_ids": {
+        "scoring_service": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "c81ed124a76ed405031e8d2fcff19e6fbdf0d3161a6bef549ad26b43b131aebe"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_106.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "adjacent_swap",
+      "injection_ground_truth": "swap tokens M3 and M5 at positions 3-4",
+      "injected_messages": [
+        "M3",
+        "M5"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring__bank_",
+        "scoring_service"
+      ],
+      "detected_minas": {
+        "credit_scoring__bank_": [
+          ".(M3,M5)"
+        ],
+        "scoring_service": [
+          ".(M3,M5)"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring__bank_": [
+          5
+        ],
+        "scoring_service": [
+          5
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "a35f9b218d6814180c6ce52d765f5315b67239daf9c4073825f7c698181ce69e"
+    },
+    {
+      "case": "credit_scoring",
+      "model_origin": "existing_bpmn_mutation",
+      "bpmn_file": "experiments/credit_scoring/collaboration.bpmn",
+      "log_file": "experiments/credit_scoring/global_log_107.txt",
+      "seed": 20840809,
+      "participant_count": 3,
+      "message_flow_count": 6,
+      "normal_trace_count": 2,
+      "abnormal_trace_count": 1,
+      "anomaly_type": "receiver_only_observation",
+      "injection_ground_truth": "replace M1 with M1_r at position 1",
+      "injected_messages": [
+        "M1"
+      ],
+      "expected_participants": [],
+      "detected_participants": [
+        "credit_scoring_frontend__bank_"
+      ],
+      "detected_minas": {
+        "credit_scoring_frontend__bank_": [
+          "M1"
+        ]
+      },
+      "strict_rule_ids": {
+        "credit_scoring_frontend__bank_": [
+          2
+        ]
+      },
+      "detected": true,
+      "strict_repair_success": true,
+      "bpmn_sha256": "cfe9353244c0b6f77567843d53a807a076d30b7789629611af8946030df917e2",
+      "log_sha256": "f2996f8f8ca207b5f11541be01edc83643f1aaf64505f8ac7f183d5b555ad83c"
+    }
+  ]
+}

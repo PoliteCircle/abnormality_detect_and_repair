@@ -1,0 +1,13 @@
+# generated extended benchmark
+# seed: 20810809
+# model_origin: existing_bpmn_mutation
+# anomaly_type: receiver_only_observation
+# injection_ground_truth: replace Order with Order_r at position 1
+# normal traces
+Order,Notification_Nok
+Order,Notification_Ok,Payment_Request,Payment_refused_Notification
+Order,Notification_Ok,Payment_Request,Payment,Product
+Order,Notification_Nok_s
+
+# abnormal trace
+Order_r,Notification_Nok

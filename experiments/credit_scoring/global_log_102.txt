@@ -1,0 +1,11 @@
+# generated extended benchmark
+# seed: 20840809
+# model_origin: existing_bpmn_mutation
+# anomaly_type: sender_only_observation
+# injection_ground_truth: replace M5 with M5_s at position 4
+# normal traces
+M1,M2,M3,M5,M6
+M1,M2,M4,M6
+
+# abnormal trace
+M1,M2,M3,M5_s,M6

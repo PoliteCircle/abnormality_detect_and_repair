@@ -1,0 +1,10 @@
+# generated extended benchmark
+# seed: 20820809
+# model_origin: existing_bpmn_mutation
+# anomaly_type: missing_message
+# injection_ground_truth: delete token M2 at position 2
+# normal traces
+M1,M2,M3,M4,M5,M6,M7
+
+# abnormal trace
+M1,M3,M4,M5,M6,M7

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_synthetic_scale_09p_032m" targetNamespace="https://example.org/pais/synthetic-benchmark">
+  <bpmn:collaboration id="Collaboration_synthetic_scale_09p_032m">
+    <bpmn:participant id="Participant_00" name="Coordinator" processRef="Process_00" />
+    <bpmn:participant id="Participant_01" name="Partner_01" processRef="Process_01" />
+    <bpmn:participant id="Participant_02" name="Partner_02" processRef="Process_02" />
+    <bpmn:participant id="Participant_03" name="Partner_03" processRef="Process_03" />
+    <bpmn:participant id="Participant_04" name="Partner_04" processRef="Process_04" />
+    <bpmn:participant id="Participant_05" name="Partner_05" processRef="Process_05" />
+    <bpmn:participant id="Participant_06" name="Partner_06" processRef="Process_06" />
+    <bpmn:participant id="Participant_07" name="Partner_07" processRef="Process_07" />
+    <bpmn:participant id="Participant_08" name="Partner_08" processRef="Process_08" />
+    <bpmn:messageFlow id="MessageFlow_001" name="S03_M001" sourceRef="Task_Send_S03_M001" targetRef="Task_Receive_S03_M001" />
+    <bpmn:messageFlow id="MessageFlow_002" name="S03_M002" sourceRef="Task_Send_S03_M002" targetRef="Task_Receive_S03_M002" />
+    <bpmn:messageFlow id="MessageFlow_003" name="S03_M003" sourceRef="Task_Send_S03_M003" targetRef="Task_Receive_S03_M003" />
+    <bpmn:messageFlow id="MessageFlow_004" name="S03_M004" sourceRef="Task_Send_S03_M004" targetRef="Task_Receive_S03_M004" />
+    <bpmn:messageFlow id="MessageFlow_005" name="S03_M005" sourceRef="Task_Send_S03_M005" targetRef="Task_Receive_S03_M005" />
+    <bpmn:messageFlow id="MessageFlow_006" name="S03_M006" sourceRef="Task_Send_S03_M006" targetRef="Task_Receive_S03_M006" />
+    <bpmn:messageFlow id="MessageFlow_007" name="S03_M007" sourceRef="Task_Send_S03_M007" targetRef="Task_Receive_S03_M007" />
+    <bpmn:messageFlow id="MessageFlow_008" name="S03_M008" sourceRef="Task_Send_S03_M008" targetRef="Task_Receive_S03_M008" />
+    <bpmn:messageFlow id="MessageFlow_009" name="S03_M009" sourceRef="Task_Send_S03_M009" targetRef="Task_Receive_S03_M009" />
+    <bpmn:messageFlow id="MessageFlow_010" name="S03_M010" sourceRef="Task_Send_S03_M010" targetRef="Task_Receive_S03_M010" />
+    <bpmn:messageFlow id="MessageFlow_011" name="S03_M011" sourceRef="Task_Send_S03_M011" targetRef="Task_Receive_S03_M011" />
+    <bpmn:messageFlow id="MessageFlow_012" name="S03_M012" sourceRef="Task_Send_S03_M012" targetRef="Task_Receive_S03_M012" />
+    <bpmn:messageFlow id="MessageFlow_013" name="S03_M013" sourceRef="Task_Send_S03_M013" targetRef="Task_Receive_S03_M013" />
+    <bpmn:messageFlow id="MessageFlow_014" name="S03_M014" sourceRef="Task_Send_S03_M014" targetRef="Task_Receive_S03_M014" />
+    <bpmn:messageFlow id="MessageFlow_015" name="S03_M015" sourceRef="Task_Send_S03_M015" targetRef="Task_Receive_S03_M015" />
+    <bpmn:messageFlow id="MessageFlow_016" name="S03_M016" sourceRef="Task_Send_S03_M016" targetRef="Task_Receive_S03_M016" />
+    <bpmn:messageFlow id="MessageFlow_017" name="S03_M017" sourceRef="Task_Send_S03_M017" targetRef="Task_Receive_S03_M017" />
+    <bpmn:messageFlow id="MessageFlow_018" name="S03_M018" sourceRef="Task_Send_S03_M018" targetRef="Task_Receive_S03_M018" />
+    <bpmn:messageFlow id="MessageFlow_019" name="S03_M019" sourceRef="Task_Send_S03_M019" targetRef="Task_Receive_S03_M019" />
+    <bpmn:messageFlow id="MessageFlow_020" name="S03_M020" sourceRef="Task_Send_S03_M020" targetRef="Task_Receive_S03_M020" />
+    <bpmn:messageFlow id="MessageFlow_021" name="S03_M021" sourceRef="Task_Send_S03_M021" targetRef="Task_Receive_S03_M021" />
+    <bpmn:messageFlow id="MessageFlow_022" name="S03_M022" sourceRef="Task_Send_S03_M022" targetRef="Task_Receive_S03_M022" />
+    <bpmn:messageFlow id="MessageFlow_023" name="S03_M023" sourceRef="Task_Send_S03_M023" targetRef="Task_Receive_S03_M023" />
+    <bpmn:messageFlow id="MessageFlow_024" name="S03_M024" sourceRef="Task_Send_S03_M024" targetRef="Task_Receive_S03_M024" />
+    <bpmn:messageFlow id="MessageFlow_025" name="S03_M025" sourceRef="Task_Send_S03_M025" targetRef="Task_Receive_S03_M025" />
+    <bpmn:messageFlow id="MessageFlow_026" name="S03_M026" sourceRef="Task_Send_S03_M026" targetRef="Task_Receive_S03_M026" />
+    <bpmn:messageFlow id="MessageFlow_027" name="S03_M027" sourceRef="Task_Send_S03_M027" targetRef="Task_Receive_S03_M027" />
+    <bpmn:messageFlow id="MessageFlow_028" name="S03_M028" sourceRef="Task_Send_S03_M028" targetRef="Task_Receive_S03_M028" />
+    <bpmn:messageFlow id="MessageFlow_029" name="S03_M029" sourceRef="Task_Send_S03_M029" targetRef="Task_Receive_S03_M029" />
+    <bpmn:messageFlow id="MessageFlow_030" name="S03_M030" sourceRef="Task_Send_S03_M030" targetRef="Task_Receive_S03_M030" />
+    <bpmn:messageFlow id="MessageFlow_031" name="S03_M031" sourceRef="Task_Send_S03_M031" targetRef="Task_Receive_S03_M031" />
+    <bpmn:messageFlow id="MessageFlow_032" name="S03_M032" sourceRef="Task_Send_S03_M032" targetRef="Task_Receive_S03_M032" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_00" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_00" />
+    <bpmn:task id="Task_Send_S03_M001" name="S03_M001" />
+    <bpmn:sequenceFlow id="Flow_00_0001" sourceRef="Start_Process_00" targetRef="Task_Send_S03_M001" />
+    <bpmn:task id="Task_Send_S03_M002" name="S03_M002" />
+    <bpmn:sequenceFlow id="Flow_00_0002" sourceRef="Task_Send_S03_M001" targetRef="Task_Send_S03_M002" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_003" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_003" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0003" sourceRef="Task_Send_S03_M002" targetRef="Gateway_parallel_split_003" />
+    <bpmn:task id="Task_Send_S03_M003" name="S03_M003" />
+    <bpmn:sequenceFlow id="Flow_00_0004" sourceRef="Gateway_parallel_split_003" targetRef="Task_Send_S03_M003" />
+    <bpmn:sequenceFlow id="Flow_00_0005" sourceRef="Task_Send_S03_M003" targetRef="Gateway_parallel_join_003" />
+    <bpmn:task id="Task_Send_S03_M004" name="S03_M004" />
+    <bpmn:sequenceFlow id="Flow_00_0006" sourceRef="Gateway_parallel_split_003" targetRef="Task_Send_S03_M004" />
+    <bpmn:sequenceFlow id="Flow_00_0007" sourceRef="Task_Send_S03_M004" targetRef="Gateway_parallel_join_003" />
+    <bpmn:task id="Task_Send_S03_M005" name="S03_M005" />
+    <bpmn:sequenceFlow id="Flow_00_0008" sourceRef="Gateway_parallel_join_003" targetRef="Task_Send_S03_M005" />
+    <bpmn:task id="Task_Send_S03_M006" name="S03_M006" />
+    <bpmn:sequenceFlow id="Flow_00_0009" sourceRef="Task_Send_S03_M005" targetRef="Task_Send_S03_M006" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_006" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_006" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0010" sourceRef="Task_Send_S03_M006" targetRef="Gateway_parallel_split_006" />
+    <bpmn:task id="Task_Send_S03_M007" name="S03_M007" />
+    <bpmn:sequenceFlow id="Flow_00_0011" sourceRef="Gateway_parallel_split_006" targetRef="Task_Send_S03_M007" />
+    <bpmn:sequenceFlow id="Flow_00_0012" sourceRef="Task_Send_S03_M007" targetRef="Gateway_parallel_join_006" />
+    <bpmn:task id="Task_Send_S03_M008" name="S03_M008" />
+    <bpmn:sequenceFlow id="Flow_00_0013" sourceRef="Gateway_parallel_split_006" targetRef="Task_Send_S03_M008" />
+    <bpmn:sequenceFlow id="Flow_00_0014" sourceRef="Task_Send_S03_M008" targetRef="Gateway_parallel_join_006" />
+    <bpmn:task id="Task_Send_S03_M009" name="S03_M009" />
+    <bpmn:sequenceFlow id="Flow_00_0015" sourceRef="Gateway_parallel_join_006" targetRef="Task_Send_S03_M009" />
+    <bpmn:task id="Task_Send_S03_M010" name="S03_M010" />
+    <bpmn:sequenceFlow id="Flow_00_0016" sourceRef="Task_Send_S03_M009" targetRef="Task_Send_S03_M010" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_009" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_009" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0017" sourceRef="Task_Send_S03_M010" targetRef="Gateway_parallel_split_009" />
+    <bpmn:task id="Task_Send_S03_M011" name="S03_M011" />
+    <bpmn:sequenceFlow id="Flow_00_0018" sourceRef="Gateway_parallel_split_009" targetRef="Task_Send_S03_M011" />
+    <bpmn:sequenceFlow id="Flow_00_0019" sourceRef="Task_Send_S03_M011" targetRef="Gateway_parallel_join_009" />
+    <bpmn:task id="Task_Send_S03_M012" name="S03_M012" />
+    <bpmn:sequenceFlow id="Flow_00_0020" sourceRef="Gateway_parallel_split_009" targetRef="Task_Send_S03_M012" />
+    <bpmn:sequenceFlow id="Flow_00_0021" sourceRef="Task_Send_S03_M012" targetRef="Gateway_parallel_join_009" />
+    <bpmn:task id="Task_Send_S03_M013" name="S03_M013" />
+    <bpmn:sequenceFlow id="Flow_00_0022" sourceRef="Gateway_parallel_join_009" targetRef="Task_Send_S03_M013" />
+    <bpmn:task id="Task_Send_S03_M014" name="S03_M014" />
+    <bpmn:sequenceFlow id="Flow_00_0023" sourceRef="Task_Send_S03_M013" targetRef="Task_Send_S03_M014" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_012" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_012" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0024" sourceRef="Task_Send_S03_M014" targetRef="Gateway_parallel_split_012" />
+    <bpmn:task id="Task_Send_S03_M015" name="S03_M015" />
+    <bpmn:sequenceFlow id="Flow_00_0025" sourceRef="Gateway_parallel_split_012" targetRef="Task_Send_S03_M015" />
+    <bpmn:sequenceFlow id="Flow_00_0026" sourceRef="Task_Send_S03_M015" targetRef="Gateway_parallel_join_012" />
+    <bpmn:task id="Task_Send_S03_M016" name="S03_M016" />
+    <bpmn:sequenceFlow id="Flow_00_0027" sourceRef="Gateway_parallel_split_012" targetRef="Task_Send_S03_M016" />
+    <bpmn:sequenceFlow id="Flow_00_0028" sourceRef="Task_Send_S03_M016" targetRef="Gateway_parallel_join_012" />
+    <bpmn:task id="Task_Send_S03_M017" name="S03_M017" />
+    <bpmn:sequenceFlow id="Flow_00_0029" sourceRef="Gateway_parallel_join_012" targetRef="Task_Send_S03_M017" />
+    <bpmn:task id="Task_Send_S03_M018" name="S03_M018" />
+    <bpmn:sequenceFlow id="Flow_00_0030" sourceRef="Task_Send_S03_M017" targetRef="Task_Send_S03_M018" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_015" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_015" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0031" sourceRef="Task_Send_S03_M018" targetRef="Gateway_parallel_split_015" />
+    <bpmn:task id="Task_Send_S03_M019" name="S03_M019" />
+    <bpmn:sequenceFlow id="Flow_00_0032" sourceRef="Gateway_parallel_split_015" targetRef="Task_Send_S03_M019" />
+    <bpmn:sequenceFlow id="Flow_00_0033" sourceRef="Task_Send_S03_M019" targetRef="Gateway_parallel_join_015" />
+    <bpmn:task id="Task_Send_S03_M020" name="S03_M020" />
+    <bpmn:sequenceFlow id="Flow_00_0034" sourceRef="Gateway_parallel_split_015" targetRef="Task_Send_S03_M020" />
+    <bpmn:sequenceFlow id="Flow_00_0035" sourceRef="Task_Send_S03_M020" targetRef="Gateway_parallel_join_015" />
+    <bpmn:task id="Task_Send_S03_M021" name="S03_M021" />
+    <bpmn:sequenceFlow id="Flow_00_0036" sourceRef="Gateway_parallel_join_015" targetRef="Task_Send_S03_M021" />
+    <bpmn:task id="Task_Send_S03_M022" name="S03_M022" />
+    <bpmn:sequenceFlow id="Flow_00_0037" sourceRef="Task_Send_S03_M021" targetRef="Task_Send_S03_M022" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_018" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_018" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0038" sourceRef="Task_Send_S03_M022" targetRef="Gateway_parallel_split_018" />
+    <bpmn:task id="Task_Send_S03_M023" name="S03_M023" />
+    <bpmn:sequenceFlow id="Flow_00_0039" sourceRef="Gateway_parallel_split_018" targetRef="Task_Send_S03_M023" />
+    <bpmn:sequenceFlow id="Flow_00_0040" sourceRef="Task_Send_S03_M023" targetRef="Gateway_parallel_join_018" />
+    <bpmn:task id="Task_Send_S03_M024" name="S03_M024" />
+    <bpmn:sequenceFlow id="Flow_00_0041" sourceRef="Gateway_parallel_split_018" targetRef="Task_Send_S03_M024" />
+    <bpmn:sequenceFlow id="Flow_00_0042" sourceRef="Task_Send_S03_M024" targetRef="Gateway_parallel_join_018" />
+    <bpmn:task id="Task_Send_S03_M025" name="S03_M025" />
+    <bpmn:sequenceFlow id="Flow_00_0043" sourceRef="Gateway_parallel_join_018" targetRef="Task_Send_S03_M025" />
+    <bpmn:task id="Task_Send_S03_M026" name="S03_M026" />
+    <bpmn:sequenceFlow id="Flow_00_0044" sourceRef="Task_Send_S03_M025" targetRef="Task_Send_S03_M026" />
+    <bpmn:parallelGateway id="Gateway_parallel_split_021" gatewayDirection="Diverging" />
+    <bpmn:parallelGateway id="Gateway_parallel_join_021" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0045" sourceRef="Task_Send_S03_M026" targetRef="Gateway_parallel_split_021" />
+    <bpmn:task id="Task_Send_S03_M027" name="S03_M027" />
+    <bpmn:sequenceFlow id="Flow_00_0046" sourceRef="Gateway_parallel_split_021" targetRef="Task_Send_S03_M027" />
+    <bpmn:sequenceFlow id="Flow_00_0047" sourceRef="Task_Send_S03_M027" targetRef="Gateway_parallel_join_021" />
+    <bpmn:task id="Task_Send_S03_M028" name="S03_M028" />
+    <bpmn:sequenceFlow id="Flow_00_0048" sourceRef="Gateway_parallel_split_021" targetRef="Task_Send_S03_M028" />
+    <bpmn:sequenceFlow id="Flow_00_0049" sourceRef="Task_Send_S03_M028" targetRef="Gateway_parallel_join_021" />
+    <bpmn:task id="Task_Send_S03_M029" name="S03_M029" />
+    <bpmn:sequenceFlow id="Flow_00_0050" sourceRef="Gateway_parallel_join_021" targetRef="Task_Send_S03_M029" />
+    <bpmn:task id="Task_Send_S03_M030" name="S03_M030" />
+    <bpmn:sequenceFlow id="Flow_00_0051" sourceRef="Task_Send_S03_M029" targetRef="Task_Send_S03_M030" />
+    <bpmn:exclusiveGateway id="Gateway_choice_split_024" gatewayDirection="Diverging" />
+    <bpmn:exclusiveGateway id="Gateway_choice_join_024" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_00_0052" sourceRef="Task_Send_S03_M030" targetRef="Gateway_choice_split_024" />
+    <bpmn:task id="Task_Receive_S03_M031" name="S03_M031" />
+    <bpmn:sequenceFlow id="Flow_00_0053" sourceRef="Gateway_choice_split_024" targetRef="Task_Receive_S03_M031" />
+    <bpmn:sequenceFlow id="Flow_00_0054" sourceRef="Task_Receive_S03_M031" targetRef="Gateway_choice_join_024" />
+    <bpmn:task id="Task_Receive_S03_M032" name="S03_M032" />
+    <bpmn:sequenceFlow id="Flow_00_0055" sourceRef="Gateway_choice_split_024" targetRef="Task_Receive_S03_M032" />
+    <bpmn:sequenceFlow id="Flow_00_0056" sourceRef="Task_Receive_S03_M032" targetRef="Gateway_choice_join_024" />
+    <bpmn:task id="Task_Internal_Finalize" name="Internal_Finalize" />
+    <bpmn:sequenceFlow id="Flow_00_0057" sourceRef="Gateway_choice_join_024" targetRef="Task_Internal_Finalize" />
+    <bpmn:endEvent id="End_Process_00" />
+    <bpmn:sequenceFlow id="Flow_00_0058" sourceRef="Task_Internal_Finalize" targetRef="End_Process_00" />
+  </bpmn:process>
+  <bpmn:process id="Process_01" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_01" />
+    <bpmn:task id="Task_Receive_S03_M001" name="S03_M001" />
+    <bpmn:sequenceFlow id="Flow_01_0001" sourceRef="Start_Process_01" targetRef="Task_Receive_S03_M001" />
+    <bpmn:task id="Task_Receive_S03_M007" name="S03_M007" />
+    <bpmn:sequenceFlow id="Flow_01_0002" sourceRef="Task_Receive_S03_M001" targetRef="Task_Receive_S03_M007" />
+    <bpmn:task id="Task_Receive_S03_M013" name="S03_M013" />
+    <bpmn:sequenceFlow id="Flow_01_0003" sourceRef="Task_Receive_S03_M007" targetRef="Task_Receive_S03_M013" />
+    <bpmn:task id="Task_Receive_S03_M019" name="S03_M019" />
+    <bpmn:sequenceFlow id="Flow_01_0004" sourceRef="Task_Receive_S03_M013" targetRef="Task_Receive_S03_M019" />
+    <bpmn:task id="Task_Receive_S03_M025" name="S03_M025" />
+    <bpmn:sequenceFlow id="Flow_01_0005" sourceRef="Task_Receive_S03_M019" targetRef="Task_Receive_S03_M025" />
+    <bpmn:endEvent id="End_Process_01" />
+    <bpmn:sequenceFlow id="Flow_01_0006" sourceRef="Task_Receive_S03_M025" targetRef="End_Process_01" />
+  </bpmn:process>
+  <bpmn:process id="Process_02" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_02" />
+    <bpmn:task id="Task_Receive_S03_M002" name="S03_M002" />
+    <bpmn:sequenceFlow id="Flow_02_0001" sourceRef="Start_Process_02" targetRef="Task_Receive_S03_M002" />
+    <bpmn:task id="Task_Receive_S03_M008" name="S03_M008" />
+    <bpmn:sequenceFlow id="Flow_02_0002" sourceRef="Task_Receive_S03_M002" targetRef="Task_Receive_S03_M008" />
+    <bpmn:task id="Task_Receive_S03_M014" name="S03_M014" />
+    <bpmn:sequenceFlow id="Flow_02_0003" sourceRef="Task_Receive_S03_M008" targetRef="Task_Receive_S03_M014" />
+    <bpmn:task id="Task_Receive_S03_M020" name="S03_M020" />
+    <bpmn:sequenceFlow id="Flow_02_0004" sourceRef="Task_Receive_S03_M014" targetRef="Task_Receive_S03_M020" />
+    <bpmn:task id="Task_Receive_S03_M026" name="S03_M026" />
+    <bpmn:sequenceFlow id="Flow_02_0005" sourceRef="Task_Receive_S03_M020" targetRef="Task_Receive_S03_M026" />
+    <bpmn:endEvent id="End_Process_02" />
+    <bpmn:sequenceFlow id="Flow_02_0006" sourceRef="Task_Receive_S03_M026" targetRef="End_Process_02" />
+  </bpmn:process>
+  <bpmn:process id="Process_03" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_03" />
+    <bpmn:task id="Task_Receive_S03_M003" name="S03_M003" />
+    <bpmn:sequenceFlow id="Flow_03_0001" sourceRef="Start_Process_03" targetRef="Task_Receive_S03_M003" />
+    <bpmn:task id="Task_Receive_S03_M009" name="S03_M009" />
+    <bpmn:sequenceFlow id="Flow_03_0002" sourceRef="Task_Receive_S03_M003" targetRef="Task_Receive_S03_M009" />
+    <bpmn:task id="Task_Receive_S03_M015" name="S03_M015" />
+    <bpmn:sequenceFlow id="Flow_03_0003" sourceRef="Task_Receive_S03_M009" targetRef="Task_Receive_S03_M015" />
+    <bpmn:task id="Task_Receive_S03_M021" name="S03_M021" />
+    <bpmn:sequenceFlow id="Flow_03_0004" sourceRef="Task_Receive_S03_M015" targetRef="Task_Receive_S03_M021" />
+    <bpmn:task id="Task_Receive_S03_M027" name="S03_M027" />
+    <bpmn:sequenceFlow id="Flow_03_0005" sourceRef="Task_Receive_S03_M021" targetRef="Task_Receive_S03_M027" />
+    <bpmn:endEvent id="End_Process_03" />
+    <bpmn:sequenceFlow id="Flow_03_0006" sourceRef="Task_Receive_S03_M027" targetRef="End_Process_03" />
+  </bpmn:process>
+  <bpmn:process id="Process_04" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_04" />
+    <bpmn:task id="Task_Receive_S03_M004" name="S03_M004" />
+    <bpmn:sequenceFlow id="Flow_04_0001" sourceRef="Start_Process_04" targetRef="Task_Receive_S03_M004" />
+    <bpmn:task id="Task_Receive_S03_M010" name="S03_M010" />
+    <bpmn:sequenceFlow id="Flow_04_0002" sourceRef="Task_Receive_S03_M004" targetRef="Task_Receive_S03_M010" />
+    <bpmn:task id="Task_Receive_S03_M016" name="S03_M016" />
+    <bpmn:sequenceFlow id="Flow_04_0003" sourceRef="Task_Receive_S03_M010" targetRef="Task_Receive_S03_M016" />
+    <bpmn:task id="Task_Receive_S03_M022" name="S03_M022" />
+    <bpmn:sequenceFlow id="Flow_04_0004" sourceRef="Task_Receive_S03_M016" targetRef="Task_Receive_S03_M022" />
+    <bpmn:task id="Task_Receive_S03_M028" name="S03_M028" />
+    <bpmn:sequenceFlow id="Flow_04_0005" sourceRef="Task_Receive_S03_M022" targetRef="Task_Receive_S03_M028" />
+    <bpmn:endEvent id="End_Process_04" />
+    <bpmn:sequenceFlow id="Flow_04_0006" sourceRef="Task_Receive_S03_M028" targetRef="End_Process_04" />
+  </bpmn:process>
+  <bpmn:process id="Process_05" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_05" />
+    <bpmn:task id="Task_Receive_S03_M005" name="S03_M005" />
+    <bpmn:sequenceFlow id="Flow_05_0001" sourceRef="Start_Process_05" targetRef="Task_Receive_S03_M005" />
+    <bpmn:task id="Task_Receive_S03_M011" name="S03_M011" />
+    <bpmn:sequenceFlow id="Flow_05_0002" sourceRef="Task_Receive_S03_M005" targetRef="Task_Receive_S03_M011" />
+    <bpmn:task id="Task_Receive_S03_M017" name="S03_M017" />
+    <bpmn:sequenceFlow id="Flow_05_0003" sourceRef="Task_Receive_S03_M011" targetRef="Task_Receive_S03_M017" />
+    <bpmn:task id="Task_Receive_S03_M023" name="S03_M023" />
+    <bpmn:sequenceFlow id="Flow_05_0004" sourceRef="Task_Receive_S03_M017" targetRef="Task_Receive_S03_M023" />
+    <bpmn:task id="Task_Receive_S03_M029" name="S03_M029" />
+    <bpmn:sequenceFlow id="Flow_05_0005" sourceRef="Task_Receive_S03_M023" targetRef="Task_Receive_S03_M029" />
+    <bpmn:endEvent id="End_Process_05" />
+    <bpmn:sequenceFlow id="Flow_05_0006" sourceRef="Task_Receive_S03_M029" targetRef="End_Process_05" />
+  </bpmn:process>
+  <bpmn:process id="Process_06" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_06" />
+    <bpmn:task id="Task_Receive_S03_M006" name="S03_M006" />
+    <bpmn:sequenceFlow id="Flow_06_0001" sourceRef="Start_Process_06" targetRef="Task_Receive_S03_M006" />
+    <bpmn:task id="Task_Receive_S03_M012" name="S03_M012" />
+    <bpmn:sequenceFlow id="Flow_06_0002" sourceRef="Task_Receive_S03_M006" targetRef="Task_Receive_S03_M012" />
+    <bpmn:task id="Task_Receive_S03_M018" name="S03_M018" />
+    <bpmn:sequenceFlow id="Flow_06_0003" sourceRef="Task_Receive_S03_M012" targetRef="Task_Receive_S03_M018" />
+    <bpmn:task id="Task_Receive_S03_M024" name="S03_M024" />
+    <bpmn:sequenceFlow id="Flow_06_0004" sourceRef="Task_Receive_S03_M018" targetRef="Task_Receive_S03_M024" />
+    <bpmn:task id="Task_Receive_S03_M030" name="S03_M030" />
+    <bpmn:sequenceFlow id="Flow_06_0005" sourceRef="Task_Receive_S03_M024" targetRef="Task_Receive_S03_M030" />
+    <bpmn:endEvent id="End_Process_06" />
+    <bpmn:sequenceFlow id="Flow_06_0006" sourceRef="Task_Receive_S03_M030" targetRef="End_Process_06" />
+  </bpmn:process>
+  <bpmn:process id="Process_07" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_07" />
+    <bpmn:exclusiveGateway id="Gateway_optional_split_07" gatewayDirection="Diverging" />
+    <bpmn:exclusiveGateway id="Gateway_optional_join_07" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_07_0001" sourceRef="Start_Process_07" targetRef="Gateway_optional_split_07" />
+    <bpmn:task id="Task_Send_S03_M031" name="S03_M031" />
+    <bpmn:sequenceFlow id="Flow_07_0002" sourceRef="Gateway_optional_split_07" targetRef="Task_Send_S03_M031" />
+    <bpmn:sequenceFlow id="Flow_07_0003" sourceRef="Task_Send_S03_M031" targetRef="Gateway_optional_join_07" />
+    <bpmn:task id="Task_Internal_Skip_07" name="Internal_Skip" />
+    <bpmn:sequenceFlow id="Flow_07_0004" sourceRef="Gateway_optional_split_07" targetRef="Task_Internal_Skip_07" />
+    <bpmn:sequenceFlow id="Flow_07_0005" sourceRef="Task_Internal_Skip_07" targetRef="Gateway_optional_join_07" />
+    <bpmn:endEvent id="End_Process_07" />
+    <bpmn:sequenceFlow id="Flow_07_0006" sourceRef="Gateway_optional_join_07" targetRef="End_Process_07" />
+  </bpmn:process>
+  <bpmn:process id="Process_08" isExecutable="false">
+    <bpmn:startEvent id="Start_Process_08" />
+    <bpmn:exclusiveGateway id="Gateway_optional_split_08" gatewayDirection="Diverging" />
+    <bpmn:exclusiveGateway id="Gateway_optional_join_08" gatewayDirection="Converging" />
+    <bpmn:sequenceFlow id="Flow_08_0001" sourceRef="Start_Process_08" targetRef="Gateway_optional_split_08" />
+    <bpmn:task id="Task_Send_S03_M032" name="S03_M032" />
+    <bpmn:sequenceFlow id="Flow_08_0002" sourceRef="Gateway_optional_split_08" targetRef="Task_Send_S03_M032" />
+    <bpmn:sequenceFlow id="Flow_08_0003" sourceRef="Task_Send_S03_M032" targetRef="Gateway_optional_join_08" />
+    <bpmn:task id="Task_Internal_Skip_08" name="Internal_Skip" />
+    <bpmn:sequenceFlow id="Flow_08_0004" sourceRef="Gateway_optional_split_08" targetRef="Task_Internal_Skip_08" />
+    <bpmn:sequenceFlow id="Flow_08_0005" sourceRef="Task_Internal_Skip_08" targetRef="Gateway_optional_join_08" />
+    <bpmn:endEvent id="End_Process_08" />
+    <bpmn:sequenceFlow id="Flow_08_0006" sourceRef="Gateway_optional_join_08" targetRef="End_Process_08" />
+  </bpmn:process>
+</bpmn:definitions>

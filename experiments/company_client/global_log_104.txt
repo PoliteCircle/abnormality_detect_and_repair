@@ -1,0 +1,13 @@
+# generated extended benchmark
+# seed: 20810809
+# model_origin: existing_bpmn_mutation
+# anomaly_type: missing_message
+# injection_ground_truth: delete token Payment at position 4
+# normal traces
+Order,Notification_Nok
+Order,Notification_Ok,Payment_Request,Payment_refused_Notification
+Order,Notification_Ok,Payment_Request,Payment,Product
+Order,Notification_Nok_s
+
+# abnormal trace
+Order,Notification_Ok,Payment_Request,Product
