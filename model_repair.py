@@ -2,40 +2,40 @@ from dataclasses import dataclass, field
 from typing import List, Set, Optional, Dict, Tuple
 
 
-# ============================================================
-# 1. 表达式树节点、失败节点、匹配结果、修复候选定义
-# ============================================================
+
+
+
 
 @dataclass
 class Node:
-    """
-    消息模式表达式树节点。
 
-    op:
-        tau     : 空动作 τ
-        recv    : 接收消息，如 ?A
-        send    : 发送消息，如 !B
-        seq     : 顺序结构，如 XY
-        choice  : 排他/选择结构，如 X+Y
-        par     : 并行结构，如 X||Y
 
-    msg:
-        叶子节点对应的消息名，例如 ?A 和 !A 的 msg 都是 A。
 
-    children:
-        非叶子节点的子节点列表。
 
-    messages:
-        当前子树中包含的所有消息名，自底向上计算。
 
-    mapped_traces:
-        自顶向下映射到该节点的日志序列集合。
-        单条 trace 情况下通常只有一个元素，例如 [['A', 'B']]。
 
-    unmapped_traces:
-        对当前节点来说，无法映射到任何子节点的消息。
-        主要用于发现“模型中不存在的新消息”。
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     op: str
     msg: Optional[str] = None
     children: List["Node"] = field(default_factory=list)
@@ -61,11 +61,11 @@ class Node:
 
 @dataclass
 class FailedNode:
-    """
-    失败匹配节点。
 
-    本版本只记录最终返回的、尽量靠近树底的失败节点。
-    """
+
+
+
+
     path: str
     label: str
     expected_messages: List[str]
@@ -75,18 +75,18 @@ class FailedNode:
 
 @dataclass
 class MatchResult:
-    """
-    匹配结果。
 
-    matched=True, blocked=False:
-        匹配成功，开放完成。
 
-    matched=True, blocked=True:
-        匹配成功，但处于合法阻塞。
 
-    matched=False:
-        匹配失败，并返回失败节点。
-    """
+
+
+
+
+
+
+
+
+
     matched: bool
     blocked: bool
     failed_nodes: List[FailedNode] = field(default_factory=list)
@@ -101,9 +101,9 @@ class MatchResult:
 
 @dataclass
 class RepairCandidate:
-    """
-    一个候选修复方案。
-    """
+
+
+
     repaired_subtree: Node
     cost: int
     reason: str
@@ -111,9 +111,9 @@ class RepairCandidate:
 
 @dataclass
 class RepairAttempt:
-    """
-    对某个失败节点或其祖先结构进行一次修复尝试后的结果。
-    """
+
+
+
     failed_path: str
     failed_label: str
     original_subtree_expr: str
@@ -124,40 +124,40 @@ class RepairAttempt:
     rematch_result: MatchResult
 
 
-# ============================================================
-# 2. 基础工具函数
-# ============================================================
+
+
+
 
 def trace_to_list(trace: str) -> List[str]:
-    """
-    将输入消息迹字符串转换为列表。
 
-    例如：
-        ABD -> ['A', 'B', 'D']
-    """
+
+
+
+
+
     return list(trace)
 
 
 def format_trace(trace: List[str]) -> str:
-    """
-    美化输出单条消息迹。
-    """
+
+
+
     return "ε" if not trace else "".join(trace)
 
 
 def format_trace_set(traces: List[List[str]]) -> str:
-    """
-    美化输出日志集合。
-    """
+
+
+
     if not traces:
         return "{}"
     return "{" + ", ".join(format_trace(t) for t in traces) + "}"
 
 
 def normalize_traces(traces: List[List[str]]) -> List[List[str]]:
-    """
-    去重并保持顺序，避免日志集合中重复片段过多影响输出。
-    """
+
+
+
     seen = set()
     out = []
     for t in traces:
@@ -169,9 +169,9 @@ def normalize_traces(traces: List[List[str]]) -> List[List[str]]:
 
 
 def make_failed_node(node: Node, path: str, trace: List[str], reason: str) -> FailedNode:
-    """
-    构造失败节点记录。
-    """
+
+
+
     return FailedNode(
         path=path,
         label=node.label(),
@@ -182,9 +182,9 @@ def make_failed_node(node: Node, path: str, trace: List[str], reason: str) -> Fa
 
 
 def print_failed_nodes(failed_nodes: List[FailedNode]) -> None:
-    """
-    打印失败节点。
-    """
+
+
+
     if not failed_nodes:
         print("无失败匹配节点。")
         return
@@ -199,31 +199,31 @@ def print_failed_nodes(failed_nodes: List[FailedNode]) -> None:
 
 
 def leaf_from_message(msg: str, default_op: str = "send") -> Node:
-    """
-    根据消息名构造叶子节点。
 
-    由于当前日志中只有消息名，没有 ? / ! 方向，
-    默认把未知消息修复为发送 !m。
 
-    如果你的日志中能区分发送/接收，可以在这里改成相应规则。
-    """
+
+
+
+
+
+
     return Node(op=default_op, msg=msg)
 
 
 def clone_node(node: Node) -> Node:
-    """
-    深拷贝节点，但不保留 mapped_traces / unmapped_traces。
-    修复后会重新计算 messages 和映射日志。
-    """
+
+
+
+
     new_node = Node(op=node.op, msg=node.msg)
     new_node.children = [clone_node(c) for c in node.children]
     return new_node
 
 
 def node_to_expr(node: Node) -> str:
-    """
-    把表达式树转回字符串表达式，用于展示修复结果。
-    """
+
+
+
     if node.op == "tau":
         return "τ"
 
@@ -264,13 +264,13 @@ def node_to_expr(node: Node) -> str:
 
 
 def simplify_node(node: Node) -> Node:
-    """
-    简化修复后的表达式树：
 
-    1. 去掉 SEQ 中的 τ；
-    2. 把只有一个孩子的 SEQ / choice / par 压缩为该孩子；
-    3. 递归简化子节点。
-    """
+
+
+
+
+
+
     if node.op in ["tau", "recv", "send"]:
         return clone_node(node)
 
@@ -300,34 +300,34 @@ def simplify_node(node: Node) -> Node:
 
 
 def prepared(node: Node) -> Node:
-    """
-    简化节点并重新计算 messages。
-    修复生成的新节点一定要调用这个函数，否则 messages 为空会影响后续关系分析。
-    """
+
+
+
+
     n = simplify_node(node)
     compute_messages(n)
     return n
 
 
-# ============================================================
-# 3. 词法分析
-# ============================================================
+
+
+
 
 def tokenize(expr: str) -> List[str]:
-    """
-    将表达式字符串拆分为 token。
 
-    支持：
-        ?A
-        !B
-        +
-        ||
-        (
-        )
-        τ
-        ε
-        tau
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
     tokens = []
     i = 0
 
@@ -378,19 +378,19 @@ def tokenize(expr: str) -> List[str]:
     return tokens
 
 
-# ============================================================
-# 4. 递归下降解析器
-# ============================================================
+
+
+
 
 class Parser:
-    """
-    解析优先级：
 
-        1. 括号
-        2. 顺序连接
-        3. 并行 ||
-        4. 选择 +
-    """
+
+
+
+
+
+
+
 
     def __init__(self, tokens: List[str]):
         self.tokens = tokens
@@ -423,9 +423,9 @@ class Parser:
         return node
 
     def parse_choice(self) -> Node:
-        """
-        choice ::= parallel ('+' parallel)*
-        """
+
+
+
         nodes = [self.parse_parallel()]
 
         while self.current() == "+":
@@ -438,9 +438,9 @@ class Parser:
         return Node(op="choice", children=nodes)
 
     def parse_parallel(self) -> Node:
-        """
-        parallel ::= sequence ('||' sequence)*
-        """
+
+
+
         nodes = [self.parse_sequence()]
 
         while self.current() == "||":
@@ -453,14 +453,14 @@ class Parser:
         return Node(op="par", children=nodes)
 
     def parse_sequence(self) -> Node:
-        """
-        sequence ::= factor+
 
-        顺序结构是隐式的，例如：
-            ?A!B!C
-        会被解析为：
-            SEQ(?A, !B, !C)
-        """
+
+
+
+
+
+
+
         nodes = []
 
         while True:
@@ -503,14 +503,14 @@ class Parser:
         raise ValueError(f"无法解析 factor: {tok}")
 
 
-# ============================================================
-# 5. 自底向上计算 messages
-# ============================================================
+
+
+
 
 def compute_messages(node: Node) -> Set[str]:
-    """
-    自底向上计算每个节点的消息集合。
-    """
+
+
+
     if node.op == "tau":
         node.messages = set()
 
@@ -527,9 +527,9 @@ def compute_messages(node: Node) -> Set[str]:
 
 
 def print_tree(node: Node, indent: int = 0, path: str = "root") -> None:
-    """
-    打印表达式树结构、消息集合、映射日志和未映射日志。
-    """
+
+
+
     prefix = "  " * indent
     print(
         f"{prefix}- path={path}, {node.label()}, "
@@ -542,21 +542,21 @@ def print_tree(node: Node, indent: int = 0, path: str = "root") -> None:
         print_tree(child, indent + 1, f"{path}/{idx}")
 
 
-# ============================================================
-# 6. 自顶向下计算每个子树的映射日志序列
-# ============================================================
+
+
+
 
 def project_trace(trace: List[str], messages: Set[str]) -> List[str]:
-    """
-    将 trace 投影到某个消息集合上。
-    """
+
+
+
     return [m for m in trace if m in messages]
 
 
 def unmapped_part(trace: List[str], child_message_sets: List[Set[str]]) -> List[str]:
-    """
-    当前节点的 trace 中，无法映射到任何子节点的消息。
-    """
+
+
+
     union_messages = set()
     for s in child_message_sets:
         union_messages |= s
@@ -565,9 +565,9 @@ def unmapped_part(trace: List[str], child_message_sets: List[Set[str]]) -> List[
 
 
 def reset_mapped_traces(node: Node) -> None:
-    """
-    清空整棵树上的 mapped_traces / unmapped_traces。
-    """
+
+
+
     node.mapped_traces = []
     node.unmapped_traces = []
 
@@ -581,19 +581,19 @@ def compute_mapped_traces_top_down(
     indent: int = 0,
     path: str = "root"
 ) -> None:
-    """
-    自顶向下计算每个子树对应的映射日志序列。
 
-    这里使用“投影”而不是匹配时的贪心划分：
 
-        - 对任意子节点 Ti，把当前日志片段 tr 中属于 messages(Ti) 的消息保留下来；
-        - 这样可以发现顺序反转、排他分支同时出现、并行分支退化等问题；
-        - 对嵌套结构也能继续递归计算局部日志。
 
-    注意：
-        mapped_traces 用于修复分析；
-        真正的匹配仍然使用 match() 中的匹配语义。
-    """
+
+
+
+
+
+
+
+
+
+
     prefix = "  " * indent
 
     node.mapped_traces = normalize_traces(traces)
@@ -633,16 +633,16 @@ def compute_mapped_traces_top_down(
         )
 
 
-# ============================================================
-# 7. 匹配阶段使用的划分函数
-# ============================================================
+
+
+
 
 def split_for_sequence(children: List[Node], trace: List[str]) -> List[List[str]]:
-    """
-    顺序结构的匹配划分。
 
-    从左到右根据每个子树的 messages 尽可能消费。
-    """
+
+
+
+
     segments = []
     pos = 0
 
@@ -665,11 +665,11 @@ def split_for_sequence(children: List[Node], trace: List[str]) -> List[List[str]
 
 
 def split_for_parallel(children: List[Node], trace: List[str]) -> Optional[List[List[str]]]:
-    """
-    并行结构的匹配划分。
 
-    按消息集合把 trace 投影到对应分支。
-    """
+
+
+
+
     segments = [[] for _ in children]
 
     for m in trace:
@@ -693,9 +693,9 @@ def split_for_parallel(children: List[Node], trace: List[str]) -> Optional[List[
     return segments
 
 
-# ============================================================
-# 8. 核心匹配算法：只返回更靠近树底的失败节点
-# ============================================================
+
+
+
 
 def match(
     node: Node,
@@ -704,11 +704,11 @@ def match(
     path: str = "root",
     verbose: bool = True
 ) -> MatchResult:
-    """
-    递归匹配消息迹 trace 是否属于当前子表达式 node 的消息模式。
 
-    verbose=False 时用于修复后的重新匹配，不输出大量过程。
-    """
+
+
+
+
     prefix = "  " * indent
 
     if verbose:
@@ -719,9 +719,9 @@ def match(
             f"待匹配消息迹={format_trace(trace)}"
         )
 
-    # ------------------------------------------------------------
-    # 8.1 空动作 τ
-    # ------------------------------------------------------------
+
+
+
     if node.op == "tau":
         if len(trace) == 0:
             result = MatchResult(matched=True, blocked=False)
@@ -738,9 +738,9 @@ def match(
 
         return result
 
-    # ------------------------------------------------------------
-    # 8.2 接收消息 ?m
-    # ------------------------------------------------------------
+
+
+
     if node.op == "recv":
         if len(trace) == 0:
             if verbose:
@@ -770,9 +770,9 @@ def match(
 
         return result
 
-    # ------------------------------------------------------------
-    # 8.3 发送消息 !m
-    # ------------------------------------------------------------
+
+
+
     if node.op == "send":
         if len(trace) == 1 and trace[0] == node.msg:
             if verbose:
@@ -802,9 +802,9 @@ def match(
 
         return result
 
-    # ------------------------------------------------------------
-    # 8.4 顺序结构
-    # ------------------------------------------------------------
+
+
+
     if node.op == "seq":
         if verbose:
             print(f"{prefix}  当前节点是顺序结构，需要从左到右依次匹配各个子结构")
@@ -885,9 +885,9 @@ def match(
 
         return result
 
-    # ------------------------------------------------------------
-    # 8.5 排他/选择结构
-    # ------------------------------------------------------------
+
+
+
     if node.op == "choice":
         if verbose:
             print(f"{prefix}  当前节点是排他/选择结构，只需一个分支能够匹配")
@@ -953,9 +953,9 @@ def match(
 
         return result
 
-    # ------------------------------------------------------------
-    # 8.6 并行结构
-    # ------------------------------------------------------------
+
+
+
     if node.op == "par":
         if verbose:
             print(f"{prefix}  当前节点是并行结构，需要按分支消息集合投影")
@@ -1019,16 +1019,16 @@ def match(
     raise ValueError(f"未知节点类型: {node.op}")
 
 
-# ============================================================
-# 9. 修复分析：关系判断
-# ============================================================
+
+
+
 
 def first_last_positions(trace: List[str], messages: Set[str]) -> Tuple[Optional[int], Optional[int]]:
-    """
-    返回某个子树消息集合在 trace 中第一次、最后一次出现的位置。
 
-    若完全没有出现，则返回 (None, None)。
-    """
+
+
+
+
     positions = [i for i, m in enumerate(trace) if m in messages]
 
     if not positions:
@@ -1038,26 +1038,26 @@ def first_last_positions(trace: List[str], messages: Set[str]) -> Tuple[Optional
 
 
 def relation_between_children(children: List[Node], traces: List[List[str]]) -> Dict[Tuple[int, int], str]:
-    """
-    判断每对子树之间的关系。
 
-    返回值包括：
 
-        exclusive:
-            从不共现，倾向于排他。
 
-        i_before_j:
-            i 总是在 j 前面，倾向于顺序。
 
-        j_before_i:
-            j 总是在 i 前面，倾向于顺序，但需要重排。
 
-        parallel:
-            既观察到 i 在前，也观察到 j 在前，或存在交错，倾向于并行。
 
-        unknown:
-            暂时无法判断。
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     relations = {}
 
     for i in range(len(children)):
@@ -1102,14 +1102,14 @@ def relation_between_children(children: List[Node], traces: List[List[str]]) -> 
 
 
 def infer_operator_from_relations(children: List[Node], traces: List[List[str]]) -> str:
-    """
-    根据子树在映射日志中的共现和顺序关系，推断父节点更适合的结构。
 
-    返回：
-        seq
-        choice
-        par
-    """
+
+
+
+
+
+
+
     useful_children = [c for c in children if c.op != "tau"]
 
     if len(useful_children) <= 1:
@@ -1126,18 +1126,18 @@ def infer_operator_from_relations(children: List[Node], traces: List[List[str]])
 
         appearing_counts.append(count)
 
-    # 每条 trace 中至多只出现一个子树，说明它们互斥。
+
     if appearing_counts and all(c <= 1 for c in appearing_counts):
         return "choice"
 
     relations = relation_between_children(useful_children, traces)
     rel_values = list(relations.values())
 
-    # 如果任意 pair 出现双向顺序或交错，优先认为是并行。
+
     if any(r == "parallel" for r in rel_values):
         return "par"
 
-    # 否则，如果都是稳定顺序或互斥关系，默认按顺序结构组织。
+
     if all(r in ["exclusive", "i_before_j", "j_before_i", "unknown"] for r in rel_values):
         return "seq"
 
@@ -1145,12 +1145,12 @@ def infer_operator_from_relations(children: List[Node], traces: List[List[str]])
 
 
 def order_children_by_log(children: List[Node], traces: List[List[str]]) -> List[Node]:
-    """
-    对顺序候选结构中的子树排序。
 
-    简化做法：
-        按照子树消息在日志中首次出现位置的平均值排序。
-    """
+
+
+
+
+
     def avg_first_pos(child: Node) -> float:
         positions = []
 
@@ -1169,12 +1169,12 @@ def order_children_by_log(children: List[Node], traces: List[List[str]]) -> List
 
 
 def message_op_map(node: Node) -> Dict[str, str]:
-    """
-    从原始子树中提取消息名到动作方向的映射。
 
-    如果 A 在原模型中是 ?A，则修复时优先仍用 ?A；
-    如果是 !A，则修复时优先仍用 !A。
-    """
+
+
+
+
+
     out = {}
 
     if node.op in ["recv", "send"] and node.msg is not None:
@@ -1187,9 +1187,9 @@ def message_op_map(node: Node) -> Dict[str, str]:
 
 
 def build_sequence_from_trace(trace: List[str], op_map: Dict[str, str]) -> Node:
-    """
-    根据日志片段构造顺序结构。
-    """
+
+
+
     if not trace:
         return Node(op="tau")
 
@@ -1206,9 +1206,9 @@ def build_sequence_from_trace(trace: List[str], op_map: Dict[str, str]) -> Node:
 
 
 def build_choice_from_traces(traces: List[List[str]], op_map: Dict[str, str]) -> Node:
-    """
-    根据多条日志片段构造排他结构，每条不同片段作为一个分支。
-    """
+
+
+
     unique = normalize_traces(traces)
     branches = [build_sequence_from_trace(t, op_map) for t in unique]
 
@@ -1232,19 +1232,19 @@ def has_empty_and_nonempty(traces: List[List[str]]) -> bool:
     return has_empty and has_nonempty
 
 
-# ============================================================
-# 10. 递归修复算法
-# ============================================================
+
+
+
 
 def repair_leaf(node: Node, indent: int = 0) -> List[RepairCandidate]:
-    """
-    单节点修复规则：
 
-    1. 如果映射日志全为空，则删除为 τ；
-    2. 如果有时为空有时为原消息，则修复为 XOR(原节点, τ)；
-    3. 如果映射日志是其他消息，则给出替换或新增选择分支；
-    4. 如果基本一致，则保持不变。
-    """
+
+
+
+
+
+
+
     prefix = "  " * indent
     traces = normalize_traces(node.mapped_traces)
     op_map = message_op_map(node)
@@ -1303,19 +1303,19 @@ def repair_leaf(node: Node, indent: int = 0) -> List[RepairCandidate]:
 
 
 def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
-    """
-    顺序、排他、并行结构的递归修复。
 
-    核心思路：
 
-    1. 先根据每个子节点的 mapped_traces 递归修复子节点；
-    2. 再根据当前节点 mapped_traces 中各子树的关系判断父结构：
-        - 互斥出现：choice
-        - 稳定先后：seq
-        - 多种交错：par
-    3. 生成候选结构并设置修复代价；
-    4. 由外层重新匹配验证候选是否有效。
-    """
+
+
+
+
+
+
+
+
+
+
+
     prefix = "  " * indent
     traces = normalize_traces(node.mapped_traces)
 
@@ -1342,7 +1342,7 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
         child_cost_sum += best_child.cost
         child_reasons.append(f"子节点{idx}: {best_child.reason}")
 
-    # 如果某些子树有时缺失，则给它增加 τ 分支，使其可选。
+
     optional_children = []
 
     for child, repaired_child in zip(node.children, repaired_children):
@@ -1357,7 +1357,7 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
 
     candidates: List[RepairCandidate] = []
 
-    # 候选 1：保持原父结构，只替换递归修复后的子树。
+
     keep = prepared(Node(op=node.op, children=optional_children))
 
     candidates.append(RepairCandidate(
@@ -1366,7 +1366,7 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
         reason="保持原父结构，仅使用递归修复后的子树；" + "；".join(child_reasons)
     ))
 
-    # 候选 2：按照日志关系修改父结构。
+
     if inferred_op == "seq":
         ordered = order_children_by_log(optional_children, traces)
         inferred = prepared(Node(op="seq", children=ordered))
@@ -1410,7 +1410,7 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
             reason="根据映射日志中子树的多种交错顺序，将父结构修复/保持为并行结构"
         ))
 
-    # 候选 3：若当前节点存在无法映射到已有子节点的新消息，则增加新分支。
+
     new_parts = [u for u in node.unmapped_traces if len(u) > 0]
 
     if new_parts:
@@ -1435,7 +1435,7 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
             reason=reason
         ))
 
-    # 去重：相同表达式只保留代价更低的方案。
+
     dedup: Dict[str, RepairCandidate] = {}
 
     for c in candidates:
@@ -1448,23 +1448,23 @@ def repair_composite(node: Node, indent: int = 0) -> List[RepairCandidate]:
 
 
 def repair_subtree(node: Node, indent: int = 0) -> List[RepairCandidate]:
-    """
-    对一个异常子树进行修复尝试。
-    """
+
+
+
     if node.op in ["tau", "recv", "send"]:
         return repair_leaf(node, indent)
 
     return repair_composite(node, indent)
 
 
-# ============================================================
-# 11. 替换子树与重新匹配
-# ============================================================
+
+
+
 
 def find_node_by_path(node: Node, path: str) -> Node:
-    """
-    根据 path 定位表达式树中的节点。
-    """
+
+
+
     if path == "root":
         return node
 
@@ -1483,9 +1483,9 @@ def find_node_by_path(node: Node, path: str) -> Node:
 
 
 def clone_with_replacement(node: Node, target_path: str, replacement: Node, path: str = "root") -> Node:
-    """
-    深拷贝整棵树，并把 target_path 对应的子树替换为 replacement。
-    """
+
+
+
     if path == target_path:
         return clone_node(replacement)
 
@@ -1505,21 +1505,21 @@ def clone_with_replacement(node: Node, target_path: str, replacement: Node, path
 
 
 def ancestor_paths(path: str) -> List[str]:
-    """
-    返回某个失败节点的所有修复范围。
 
-    例如：
-        root/1/2 -> ['root/1/2', 'root/1', 'root']
 
-    这样可以同时尝试：
 
-        1. 只修复最底层失败节点；
-        2. 修复其父结构；
-        3. 必要时修复更高层结构。
 
-    这一步很重要，因为有些异常是父结构关系错误，
-    例如 !A!B 无法匹配 BA，真正需要修复的是 SEQ，而不是叶子 !A。
-    """
+
+
+
+
+
+
+
+
+
+
+
     parts = path.split("/")
     scopes = []
 
@@ -1534,14 +1534,14 @@ def try_repair_failed_nodes(
     failed_nodes: List[FailedNode],
     trace: List[str]
 ) -> List[RepairAttempt]:
-    """
-    对所有匹配失败节点进行修复尝试。
 
-    注意：
-        最底层失败节点可以定位直接错误；
-        但有些错误属于父结构关系错误，例如顺序反转、排他结构过窄、并行结构过宽。
-        因此这里不仅尝试修复失败节点本身，也尝试修复它的祖先子树。
-    """
+
+
+
+
+
+
+
     attempts = []
 
     if not failed_nodes:
@@ -1611,9 +1611,9 @@ def try_repair_failed_nodes(
 
 
 def print_repair_summary(attempts: List[RepairAttempt]) -> None:
-    """
-    打印所有修复尝试的汇总结果。
-    """
+
+
+
     print("\n[7] 修复尝试汇总")
     print("=" * 80)
 
@@ -1648,23 +1648,23 @@ def print_repair_summary(attempts: List[RepairAttempt]) -> None:
             print(f"      重新匹配：{a.rematch_result.text()}")
 
 
-# ============================================================
-# 12. 主函数
-# ============================================================
+
+
+
 
 def match_and_repair_message_pattern(expr: str, trace_str: str) -> Tuple[MatchResult, List[RepairAttempt]]:
-    """
-    完整流程：
 
-    1. 词法分析；
-    2. 解析为表达式树；
-    3. 自底向上计算 messages；
-    4. 自顶向下计算每个子树的 mapped_traces；
-    5. 执行原有匹配算法；
-    6. 若失败，定位更靠近树底的失败节点；
-    7. 对失败节点及其祖先结构进行递归修复尝试；
-    8. 对每个候选修复结果重新匹配验证。
-    """
+
+
+
+
+
+
+
+
+
+
+
     print("=" * 80)
     print("输入消息模式表达式：", expr)
     print("输入消息迹：", trace_str)
@@ -1709,22 +1709,22 @@ def match_and_repair_message_pattern(expr: str, trace_str: str) -> Tuple[MatchRe
 
 
 def match_message_pattern(expr: str, trace_str: str) -> MatchResult:
-    """
-    为了兼容之前的函数名，保留一个简单包装。
-    """
+
+
+
     result, _ = match_and_repair_message_pattern(expr, trace_str)
     return result
 
 
-# ============================================================
-# 13. 示例运行
-# ============================================================
+
+
+
 
 if __name__ == "__main__":
-    # 示例 1：
-    # 原表达式：?A!B(?C||!D+!E)!F
-    # 消息迹：ABDE
-    # 这个 trace 往往会触发失败定位和修复尝试。
+
+
+
+
     expr1 = "?A!B(?C||!D+!E)!F"
     trace1 = "ABDE"
 
@@ -1732,10 +1732,10 @@ if __name__ == "__main__":
 
     print("\n" + "#" * 80 + "\n")
 
-    # 示例 2：
-    # 顺序反转示例。
-    # 原模型要求 A 后 B，但日志是 BA。
-    # 递归修复会尝试把 SEQ(!A,!B) 修复为 SEQ(!B,!A)。
+
+
+
+
     expr2 = "!A!B"
     trace2 = "BA"
 
@@ -1743,10 +1743,10 @@ if __name__ == "__main__":
 
     print("\n" + "#" * 80 + "\n")
 
-    # 示例 3：
-    # 排他结构中同时出现两个分支。
-    # 原模型 !A+!B 不允许 AB 同时出现，
-    # 修复时会尝试在父结构层面调整。
+
+
+
+
     expr3 = "!A+!B"
     trace3 = "AB"
 

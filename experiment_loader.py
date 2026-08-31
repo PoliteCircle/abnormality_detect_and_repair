@@ -8,19 +8,19 @@ from bpmn_transform import transform_bpmn_events_and_gateways
 Trace = Tuple[str, ...]
 
 
-# =========================================================
-# 读取 global_log 文件
-# =========================================================
-def load_global_log(path: Path) -> Set[Trace]:
-    """
-    读取日志文件：
-    每一行是一条消息迹
-    格式: M1,M2,M3_s,M3_r
 
-    支持:
-        空行
-        注释 (# 开头)
-    """
+
+
+def load_global_log(path: Path) -> Set[Trace]:
+
+
+
+
+
+
+
+
+
     traces: Set[Trace] = set()
 
     with open(path, "r", encoding="utf-8") as f:
@@ -39,9 +39,9 @@ def load_global_log(path: Path) -> Set[Trace]:
     return traces
 
 
-# =========================================================
-# 选择实验目录
-# =========================================================
+
+
+
 def choose_experiment_case(exp_root: Path) -> Path:
     if not exp_root.exists():
         raise RuntimeError(f"'experiments' directory not found: {exp_root}")
@@ -51,7 +51,7 @@ def choose_experiment_case(exp_root: Path) -> Path:
     if not cases:
         raise RuntimeError("No experiment folders found in /experiments")
 
-    # 稳定排序：按名字
+
     cases.sort(key=lambda p: p.name)
 
     print("\nAvailable experiment cases:\n")
@@ -65,9 +65,9 @@ def choose_experiment_case(exp_root: Path) -> Path:
         print("Invalid index, try again.")
 
 
-# =========================================================
-# 选择 global_log_x 文件
-# =========================================================
+
+
+
 _GLOBAL_LOG_RE = re.compile(r"^global_log_(\d+)(?:\.txt)?$")
 
 def _extract_global_log_index(p: Path) -> Optional[int]:
@@ -77,11 +77,11 @@ def _extract_global_log_index(p: Path) -> Optional[int]:
     return int(m.group(1))
 
 def choose_global_log_file(case_dir: Path) -> Path:
-    """
-    在 case_dir 下查找所有:
-        global_log_0 / global_log_1 / ... （可带 .txt）
-    并让用户选择。
-    """
+
+
+
+
+
     candidates: List[Path] = []
     for p in case_dir.iterdir():
         if p.is_file() and _extract_global_log_index(p) is not None:
@@ -93,7 +93,7 @@ def choose_global_log_file(case_dir: Path) -> Path:
             f"Expected files like global_log_0(.txt), global_log_1(.txt), ..."
         )
 
-    # 按数字后缀排序
+
     candidates.sort(key=lambda p: _extract_global_log_index(p) or 0)
 
     print("\nAvailable global_log files:\n")
@@ -108,28 +108,28 @@ def choose_global_log_file(case_dir: Path) -> Path:
         print("Invalid index, try again.")
 
 
-# =========================================================
-# 主加载接口
-# =========================================================
+
+
+
 def load_experiment(base_dir: Path):
-    """
-    返回:
-        new_bpmn_path: Path
-        global_log: Set[Trace]
-    """
+
+
+
+
+
     exp_root = base_dir / "experiments"
     case_dir = choose_experiment_case(exp_root)
 
     print(f"\n[INFO] Selected case: {case_dir.name}")
 
-    # --- BPMN ---
+
     bpmn_path = case_dir / "collaboration.bpmn"
     if not bpmn_path.exists():
         raise RuntimeError(f"Missing file: {bpmn_path}")
 
     print("[LOAD] BPMN =", bpmn_path)
 
-    # --- LOG (改：选择 global_log_x) ---
+
     log_file = choose_global_log_file(case_dir)
     print("[LOAD] global_log =", log_file)
 
@@ -139,7 +139,7 @@ def load_experiment(base_dir: Path):
     for t in sorted(global_log):
         print("   ", t)
 
-    # --- TRANSFORM BPMN ---
+
     out_dir = base_dir / "generated_bpmn" / case_dir.name
     new_bpmn_path = transform_bpmn_events_and_gateways(
         src_bpmn_path=bpmn_path,

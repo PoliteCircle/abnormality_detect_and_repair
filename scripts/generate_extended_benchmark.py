@@ -211,9 +211,9 @@ def _build_synthetic_bpmn(
         if block.kind == "leaf":
             message = block.messages[0]
             task_id = f"Task_Send_{message.name}"
-            # Generic tasks are used deliberately.  PM4Py's BPMN-to-process-tree
-            # converter handles them consistently across versions, while the
-            # collaboration messageFlow still supplies the send/receive direction.
+
+
+
             ET.SubElement(coordinator, _qname("task"), {"id": task_id, "name": message.name})
             coordinator_endpoints[message.name] = task_id
             flow_index = _add_sequence_flow(coordinator, "00", flow_index, current, task_id)
@@ -243,10 +243,10 @@ def _build_synthetic_bpmn(
             flow_index = _add_sequence_flow(coordinator, "00", flow_index, task_id, join_id)
         current = join_id
 
-    # A visible internal activity after the final XOR keeps PM4Py's WF-net
-    # reducer from emitting the malformed tail ``->(X(...), tau)``.  It is not
-    # connected to a messageFlow and is therefore simplified to tau by the
-    # Chapter 7 message-tree converter.
+
+
+
+
     finalize_id = "Task_Internal_Finalize"
     ET.SubElement(coordinator, _qname("task"), {"id": finalize_id, "name": "Internal_Finalize"})
     flow_index = _add_sequence_flow(coordinator, "00", flow_index, current, finalize_id)

@@ -89,7 +89,7 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             try:
                 _, models = load_process_models(bpmn_path, runtime_root / case_name)
-            except Exception as exc:  # validation must report the failing case
+            except Exception as exc:
                 errors.append(f"{case_name}: BPMN load failed: {exc}")
                 continue
 

@@ -1,41 +1,41 @@
-# repair_suggestion.py
-# -*- coding: utf-8 -*-
-"""
-根据“潜在修复方案”（表 6-5 的思想），对每个异常子流程的 MinAS 子树提出候选修复，
-并用可生成性（match/generate）检查保证：
-  - 正常投影日志仍可通过
-  - 异常投影日志也可通过
 
-修改点（你这次的需求）：
-- 不再只输出 okN/okA（是否覆盖全部），而是输出：
-    修复前：能通过的 normal/abnormal trace 数量
-    修复后：能通过的 normal/abnormal trace 数量
-  同时保留 ok_on_normals/ok_on_abnormals 方便排序。
 
-注意：
-- 本文件复用你工程里的 ast_expr.Leaf / ast_expr.OpNode，不再自造 Expr 基类，更不会 subclass typing.Union。
-- 约定：
-  '.' = 顺序
-  '+' = 选择（排他/事件网关在流程树里你都映射成 '+'）
-  '|' = 并行（交错语义）
-- 我们引入一个特殊叶子 EPS="ε" 表示 τ/空动作，只生成空 trace ()。
-  修复建议里出现 ε 时，仅用于“匹配检查”和“展示建议”，不要求你把它写回 BPMN。
-"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence, Set, Tuple
 
-from ast_expr import Leaf, OpNode  # 复用你的 AST 类型
+from ast_expr import Leaf, OpNode
 
 Trace = Tuple[str, ...]
-EPS = "ε"  # 空动作/τ：只生成空 trace ()
+EPS = "ε"
 
 
-# -----------------------------
-# 工具：AST -> 字符串（用于输出）
-# -----------------------------
+
+
+
 def expr_to_str(e) -> str:
     if isinstance(e, Leaf):
         return e.name
@@ -44,14 +44,14 @@ def expr_to_str(e) -> str:
     return str(e)
 
 
-# -----------------------------
-# 工具：收集消息叶子集合
-# -----------------------------
+
+
+
 def collect_messages(e) -> Set[str]:
-    """
-    收集该子树的“消息名”叶子集合。
-    约定 EPS(ε) 不算消息。
-    """
+
+
+
+
     if isinstance(e, Leaf):
         return set() if e.name == EPS else {e.name}
     if isinstance(e, OpNode):
@@ -63,22 +63,22 @@ def collect_messages(e) -> Set[str]:
 
 
 def project_trace_to_msgs(tr: Trace, msgset: Set[str]) -> Trace:
-    """把 trace 投影到给定 msgset 上（按原顺序过滤）"""
+
     return tuple(x for x in tr if x in msgset)
 
 
-# -----------------------------
-# 可生成性检查（用于验证修复候选）
-# -----------------------------
-def can_generate(e, tr: Trace, debug: bool = False, indent: str = "") -> bool:
-    """
-    判断 e 是否“能生成”该消息序列 tr。
-    这是一个“结构化匹配/预分割”式的判定器（用于 debug/验证修复候选），不是完整语义模型检查。
 
-    假设（与你论文限制一致）：
-    - 结构化、无循环
-    - 每个消息活动最多出现一次（即消息名在树上唯一），这样并行用投影检查足够靠谱
-    """
+
+
+def can_generate(e, tr: Trace, debug: bool = False, indent: str = "") -> bool:
+
+
+
+
+
+
+
+
     if isinstance(e, Leaf):
         if e.name == EPS:
             ok = (len(tr) == 0)
@@ -96,7 +96,7 @@ def can_generate(e, tr: Trace, debug: bool = False, indent: str = "") -> bool:
     op = e.op
     children = e.children
 
-    if op == "+":  # 选择：任一分支能生成即可
+    if op == "+":
         if debug:
             print(f"{indent}[GEN] Choice + node={expr_to_str(e)} tr={tr}")
         for c in children:
@@ -108,12 +108,12 @@ def can_generate(e, tr: Trace, debug: bool = False, indent: str = "") -> bool:
             print(f"{indent}  [GEN] Choice failed for all branches")
         return False
 
-    if op == ".":  # 顺序：必须按顺序依次匹配
+    if op == ".":
         if debug:
             print(f"{indent}[GEN] Seq . node={expr_to_str(e)} tr={tr}")
         return _seq_generate_left_to_right(children, tr, debug=debug, indent=indent + "  ")
 
-    if op == "|":  # 并行：交错语义（用投影近似判断）
+    if op == "|":
         if debug:
             print(f"{indent}[GEN] Par | node={expr_to_str(e)} tr={tr}")
 
@@ -144,10 +144,10 @@ def can_generate(e, tr: Trace, debug: bool = False, indent: str = "") -> bool:
 
 
 def _seq_generate_left_to_right(children: Sequence, tr: Trace, debug: bool, indent: str) -> bool:
-    """
-    顺序结构匹配：必须先匹配第一个子结构，再继续匹配后续。
-    这里做“前缀切分”的回溯，但确保是从左到右推进。
-    """
+
+
+
+
 
     def dfs(i: int, pos: int) -> bool:
         if i == len(children):
@@ -173,16 +173,16 @@ def _seq_generate_left_to_right(children: Sequence, tr: Trace, debug: bool, inde
     return dfs(0, 0)
 
 
-# -----------------------------
-# 修复建议的数据结构（改为统计）
-# -----------------------------
+
+
+
 @dataclass
 class RepairSuggestion:
     reason: str
     before_subtree: str
     after_subtree: str
 
-    # 修复前/后通过条数统计
+
     before_pass_normals: int
     before_total_normals: int
     before_pass_abnormals: int
@@ -193,30 +193,30 @@ class RepairSuggestion:
     after_pass_abnormals: int
     after_total_abnormals: int
 
-    # 是否覆盖全部（用于排序/筛选）
+
     ok_on_normals: bool
     ok_on_abnormals: bool
 
     detail: List[str]
 
 
-# -----------------------------
-# 生成候选修复（核心）
-# -----------------------------
+
+
+
 def suggest_repairs_for_minas_subtree(
     minas_subtree,
     normal_traces_proj: Set[Trace],
     abnormal_traces_proj: Set[Trace],
     debug: bool = True
 ) -> List[RepairSuggestion]:
-    """
-    对单个 MinAS 子树给出候选修复方案，并验证：
-      normal_traces_proj ⊆ L(after_subtree) 且 abnormal_traces_proj ⊆ L(after_subtree)
 
-    normal_traces_proj / abnormal_traces_proj:
-      已经是投影到“当前子流程消息集合”上的 trace；
-      本函数内部会再投影到 minas_subtree 的消息集合上。
-    """
+
+
+
+
+
+
+
 
     before_str = expr_to_str(minas_subtree)
 
@@ -233,7 +233,7 @@ def suggest_repairs_for_minas_subtree(
 
     candidates: List[Tuple[str, object]] = []
 
-    # ---------- 规则族 A：单节点（叶子）异常 ----------
+
     if isinstance(minas_subtree, Leaf) and minas_subtree.name != EPS:
         a = minas_subtree.name
         if () in abnormals:
@@ -246,7 +246,7 @@ def suggest_repairs_for_minas_subtree(
                 OpNode("+", [Leaf(a), Leaf(EPS)])
             ))
 
-    # ---------- 规则族 B：顺序结构异常 ----------
+
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "." and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
@@ -275,7 +275,7 @@ def suggest_repairs_for_minas_subtree(
                         ))
                     break
 
-    # ---------- 规则族 C：排他/事件网关异常（'+'） ----------
+
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "+" and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
@@ -292,7 +292,7 @@ def suggest_repairs_for_minas_subtree(
                 OpNode("|", list(minas_subtree.children))
             ))
 
-    # ---------- 规则族 D：并行网关异常（'|'） ----------
+
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "|" and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
@@ -327,9 +327,9 @@ def suggest_repairs_for_minas_subtree(
                     print(f"  [SKIP] Rule(12): has_all_msgs_trace={has_all_msgs_trace}, "
                           f"has_single_branch_trace={has_single_branch_trace}, par_msgs={sorted(par_msgs)}")
 
-    # ---------------------------------
-    # 对每个候选做“覆盖验证 + 统计”
-    # ---------------------------------
+
+
+
     suggestions: List[RepairSuggestion] = []
     for reason, after in candidates:
         after_str = expr_to_str(after)
@@ -346,7 +346,7 @@ def suggest_repairs_for_minas_subtree(
             print(f"  [CAND] before = {before_str}")
             print(f"  [CAND] after  = {after_str}")
 
-        # normal：修复前/后分别统计
+
         for tr in sorted(normals):
             ok_before = can_generate(minas_subtree, tr, debug=debug, indent="    ")
             ok_after = can_generate(after, tr, debug=debug, indent="    ")
@@ -355,7 +355,7 @@ def suggest_repairs_for_minas_subtree(
             afterN_pass += int(ok_after)
             detail.append(f"[NORMAL] tr={tr} before={ok_before} after={ok_after}")
 
-        # abnormal：修复前/后分别统计
+
         for tr in sorted(abnormals):
             ok_before = can_generate(minas_subtree, tr, debug=debug, indent="    ")
             ok_after = can_generate(after, tr, debug=debug, indent="    ")
@@ -394,7 +394,7 @@ def suggest_repairs_for_minas_subtree(
             detail=detail
         ))
 
-    # 把“同时覆盖 normal+abnormal”的排前面；其次可按异常提升幅度排序（可选）
+
     suggestions.sort(
         key=lambda s: (
             not (s.ok_on_normals and s.ok_on_abnormals),
@@ -425,10 +425,10 @@ def suggest_repairs_for_process(
     abnormal_traces_proj: Set[Trace],
     debug: bool = True
 ) -> Dict[str, List[RepairSuggestion]]:
-    """
-    对一个异常子流程：对每个 MinAS 子树输出一组修复建议。
-    返回 dict：key=MinAS子树字符串，value=该子树的 RepairSuggestion 列表
-    """
+
+
+
+
     if debug:
         print("\n" + "=" * 80)
         print(f"[REPAIR] process_message_tree = {expr_to_str(process_message_tree)}")

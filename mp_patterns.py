@@ -4,23 +4,23 @@ from functools import lru_cache
 
 from ast_expr import Expr, Leaf, OpNode
 
-# ============================================================
-# 类型
-#  Seq: 一条消息序列，例如 ('M1','M2')
-#  SeqSet: 多条消息序列集合
-#  CO: (closed, open)
-# ============================================================
+
+
+
+
+
+
 
 Token = str
 Seq = Tuple[Token, ...]
 SeqSet = Set[Seq]
 CO = Tuple[SeqSet, SeqSet]
-EPS: Seq = tuple()  # ε
+EPS: Seq = tuple()
 
 
-# ============================================================
-# 串接（顺序组合）
-# ============================================================
+
+
+
 
 def concat_sets(A: SeqSet, B: SeqSet) -> SeqSet:
     out: SeqSet = set()
@@ -30,9 +30,9 @@ def concat_sets(A: SeqSet, B: SeqSet) -> SeqSet:
     return out
 
 
-# ============================================================
-# 交错（并行 shuffle），支持 limit 截断避免爆炸
-# ============================================================
+
+
+
 
 @lru_cache(maxsize=None)
 def _interleave_two(a: Seq, b: Seq) -> Tuple[Seq, ...]:
@@ -58,25 +58,25 @@ def interleave_sets(A: SeqSet, B: SeqSet, limit: Optional[int] = None) -> SeqSet
     return out
 
 
-# ============================================================
-# 表 6-3 规则 1-3：叶子
-# 叶子现在是消息名 M1/M2...（不再是 task 名）
-# ============================================================
+
+
+
+
 
 def leaf_rule(name: str, MEo: Set[str], MEi: Set[str]) -> CO:
-    # 发送消息
+
     if name in MEo:
         return set(), {(name,)}
-    # 接收消息
+
     if name in MEi:
         return {EPS}, {(name,)}
-    # 非消息元素（一般不会出现，因为我们会把 task 映射成消息）
+
     return set(), {EPS}
 
 
-# ============================================================
-# 表 6-3 规则 4-7：结构组合
-# ============================================================
+
+
+
 
 def rule_seq(coX: CO, coY: CO) -> CO:
     closedX, openX = coX
@@ -111,10 +111,10 @@ def apply_rule(op: str, coX: CO, coY: CO, interleave_limit: Optional[int]) -> CO
     raise ValueError(f"Unknown operator: {op}")
 
 
-# ============================================================
-# Algorithm 2：CalCO
-# 多元运算 fold 合并
-# ============================================================
+
+
+
+
 
 def calco(expr: Expr, MEo: Set[str], MEi: Set[str], interleave_limit: Optional[int] = None) -> CO:
     if isinstance(expr, Leaf):

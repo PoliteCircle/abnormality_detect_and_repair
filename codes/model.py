@@ -11,11 +11,11 @@ Trace = tuple[str, ...]
 
 @dataclass(frozen=True, slots=True)
 class Node:
-    """A message-only process-tree node.
 
-    ``seq``, ``choice`` and ``parallel`` correspond to the paper's ``.``,
-    ``+`` and ``|`` operators.  ``tau`` is an internal/empty action.
-    """
+
+
+
+
 
     operator: Operator
     name: str | None = None
@@ -62,7 +62,7 @@ class Node:
     @property
     def messages(self) -> frozenset[str]:
         if self.operator == "leaf":
-            return frozenset((self.name,))  # type: ignore[arg-type]
+            return frozenset((self.name,))  
         if self.operator == "tau":
             return frozenset()
         return frozenset().union(*(child.messages for child in self.children))
@@ -95,7 +95,7 @@ class ProcessModel:
 
 
 def simplify(node: Node, *, recursive: bool = True) -> Node:
-    """Remove neutral tau nodes while preserving optional choice branches."""
+
 
     if node.operator in {"leaf", "tau"}:
         return node
@@ -158,12 +158,12 @@ def replace_child_slice(
     child_slice: tuple[int, int],
     replacement: Node,
 ) -> Node:
-    """Replace an inclusive range of children in one composite node.
 
-    PM4Py flattens n-ary sequence nodes.  Chapter 7's smallest abnormal
-    sequential fragment can therefore be a contiguous pair inside such a
-    node rather than a separately materialised tree node.
-    """
+
+
+
+
+
 
     container = node_at_path(root, container_path)
     if container.operator not in {"seq", "choice", "parallel"}:

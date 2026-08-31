@@ -104,7 +104,7 @@ def run_analysis(
     report_name: str = "analysis-report.json",
     write_json: bool = True,
 ) -> AnalysisReport:
-    """Run all three Chapter 7 stages and return a reproducible report."""
+
 
     started = time.perf_counter()
     bpmn_path = bpmn_path.resolve()

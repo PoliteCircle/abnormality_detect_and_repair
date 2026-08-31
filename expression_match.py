@@ -2,31 +2,31 @@ from dataclasses import dataclass, field
 from typing import List, Set, Optional
 
 
-# ============================================================
-# 1. 表达式树节点定义
-# ============================================================
+
+
+
 
 @dataclass
 class Node:
-    """
-    消息模式表达式树节点。
 
-    op:
-        recv    : 接收消息，如 ?A
-        send    : 发送消息，如 !B
-        seq     : 顺序结构，如 XY
-        choice  : 选择结构，如 X+Y
-        par     : 并行结构，如 X||Y
 
-    msg:
-        叶子节点对应的消息名，例如 ?A 和 !A 的 msg 都是 A。
 
-    children:
-        非叶子节点的子节点列表。
 
-    messages:
-        当前子树中包含的所有消息名。
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     op: str
     msg: Optional[str] = None
     children: List["Node"] = field(default_factory=list)
@@ -48,11 +48,11 @@ class Node:
 
 @dataclass
 class FailedNode:
-    """
-    失败匹配节点。
 
-    只记录最终返回的、尽量靠近树底的失败节点。
-    """
+
+
+
+
     path: str
     label: str
     expected_messages: List[str]
@@ -62,21 +62,21 @@ class FailedNode:
 
 @dataclass
 class MatchResult:
-    """
-    匹配结果。
 
-    matched:
-        是否匹配成功。
 
-    blocked:
-        是否处于阻塞状态。
-        blocked=True 表示消息迹是合法阻塞前缀。
-        blocked=False 表示消息迹开放完成。
 
-    failed_nodes:
-        未能成功匹配的子树节点。
-        本版本只返回更靠近树底的失败节点。
-    """
+
+
+
+
+
+
+
+
+
+
+
+
     matched: bool
     blocked: bool
     failed_nodes: List[FailedNode] = field(default_factory=list)
@@ -89,33 +89,33 @@ class MatchResult:
         return "匹配成功，且未阻塞"
 
 
-# ============================================================
-# 2. 基础工具函数
-# ============================================================
+
+
+
 
 def trace_to_list(trace: str) -> List[str]:
-    """
-    将输入消息迹字符串转换为列表。
 
-    例如：
-        ABD -> ['A', 'B', 'D']
-    """
+
+
+
+
+
     return list(trace)
 
 
 def format_trace(trace: List[str]) -> str:
-    """
-    美化输出消息迹。
-    """
+
+
+
     if not trace:
         return "ε"
     return "".join(trace)
 
 
 def make_failed_node(node: Node, path: str, trace: List[str], reason: str) -> FailedNode:
-    """
-    构造失败节点记录。
-    """
+
+
+
     return FailedNode(
         path=path,
         label=node.label(),
@@ -126,9 +126,9 @@ def make_failed_node(node: Node, path: str, trace: List[str], reason: str) -> Fa
 
 
 def print_failed_nodes(failed_nodes: List[FailedNode]) -> None:
-    """
-    打印失败节点。
-    """
+
+
+
     if not failed_nodes:
         print("无失败匹配节点。")
         return
@@ -142,28 +142,28 @@ def print_failed_nodes(failed_nodes: List[FailedNode]) -> None:
         print(f"      失败原因={fn.reason}")
 
 
-# ============================================================
-# 3. 词法分析
-# ============================================================
+
+
+
 
 def tokenize(expr: str) -> List[str]:
-    """
-    将表达式字符串拆分为 token。
 
-    支持：
-        ?A
-        !B
-        +
-        ||
-        (
-        )
 
-    例如：
-        ?A!B(?C||!D+!E)!F
 
-    会被拆成：
-        ['?A', '!B', '(', '?C', '||', '!D', '+', '!E', ')', '!F']
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     tokens = []
     i = 0
 
@@ -204,25 +204,25 @@ def tokenize(expr: str) -> List[str]:
     return tokens
 
 
-# ============================================================
-# 4. 递归下降解析器
-# ============================================================
+
+
+
 
 class Parser:
-    """
-    解析优先级约定：
 
-        1. 括号最高
-        2. 顺序连接次之
-        3. 并行 || 再次
-        4. 选择 + 最低
 
-    因此：
-        ?C||!D+!E
 
-    会被解析为：
-        (?C || !D) + !E
-    """
+
+
+
+
+
+
+
+
+
+
+
 
     def __init__(self, tokens: List[str]):
         self.tokens = tokens
@@ -254,9 +254,9 @@ class Parser:
         return node
 
     def parse_choice(self) -> Node:
-        """
-        choice ::= parallel ('+' parallel)*
-        """
+
+
+
         nodes = [self.parse_parallel()]
 
         while self.current() == "+":
@@ -269,9 +269,9 @@ class Parser:
         return Node(op="choice", children=nodes)
 
     def parse_parallel(self) -> Node:
-        """
-        parallel ::= sequence ('||' sequence)*
-        """
+
+
+
         nodes = [self.parse_sequence()]
 
         while self.current() == "||":
@@ -284,14 +284,14 @@ class Parser:
         return Node(op="par", children=nodes)
 
     def parse_sequence(self) -> Node:
-        """
-        sequence ::= factor+
 
-        顺序结构是隐式的，例如：
-            ?A!B!C
-        会被解析为：
-            SEQ(?A, !B, !C)
-        """
+
+
+
+
+
+
+
         nodes = []
 
         while True:
@@ -330,14 +330,14 @@ class Parser:
         raise ValueError(f"无法解析 factor: {tok}")
 
 
-# ============================================================
-# 5. 为每个树节点计算消息集合
-# ============================================================
+
+
+
 
 def compute_messages(node: Node) -> Set[str]:
-    """
-    自底向上计算每个节点的消息集合。
-    """
+
+
+
     if node.op in ["recv", "send"]:
         node.messages = {node.msg}
     else:
@@ -350,9 +350,9 @@ def compute_messages(node: Node) -> Set[str]:
 
 
 def print_tree(node: Node, indent: int = 0, path: str = "root") -> None:
-    """
-    打印表达式树结构，以及每个节点的消息集合。
-    """
+
+
+
     prefix = "  " * indent
     print(f"{prefix}- path={path}, {node.label()}, messages={sorted(node.messages)}")
 
@@ -360,20 +360,20 @@ def print_tree(node: Node, indent: int = 0, path: str = "root") -> None:
         print_tree(child, indent + 1, f"{path}/{idx}")
 
 
-# ============================================================
-# 6. 根据消息集合进行初步分配
-# ============================================================
+
+
+
 
 def split_for_sequence(children: List[Node], trace: List[str]) -> List[List[str]]:
-    """
-    顺序结构的初步划分。
 
-    对顺序结构的每个子树，根据该子树的 messages 集合，
-    从左到右尽可能消费属于该子树的消息。
 
-    如果最后还有无法被后续结构消费的消息，则放入最后一个段，
-    让后续匹配逻辑给出失败定位。
-    """
+
+
+
+
+
+
+
     segments = []
     pos = 0
 
@@ -396,16 +396,16 @@ def split_for_sequence(children: List[Node], trace: List[str]) -> List[List[str]
 
 
 def split_for_parallel(children: List[Node], trace: List[str]) -> Optional[List[List[str]]]:
-    """
-    并行结构的划分。
 
-    根据并行结构每个子树的 messages 集合，
-    把输入消息迹投影到对应子树。
 
-    注意：
-        这里假设并行结构的不同分支消息名不重叠。
-        如果一个消息同时属于多个分支，会产生歧义，代码会抛出错误。
-    """
+
+
+
+
+
+
+
+
     segments = [[] for _ in children]
 
     for m in trace:
@@ -429,24 +429,24 @@ def split_for_parallel(children: List[Node], trace: List[str]) -> Optional[List[
     return segments
 
 
-# ============================================================
-# 7. 核心匹配算法：只返回更靠近树底的失败节点
-# ============================================================
+
+
+
 
 def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> MatchResult:
-    """
-    递归匹配消息迹 trace 是否属于当前子表达式 node 的消息模式。
 
-    返回：
-        MatchResult(matched=True, blocked=False)
-            表示匹配成功，并且开放完成。
 
-        MatchResult(matched=True, blocked=True)
-            表示匹配成功，但是已经阻塞。
 
-        MatchResult(matched=False, blocked=False, failed_nodes=[...])
-            表示匹配失败，并返回尽量靠近树底的失败节点。
-    """
+
+
+
+
+
+
+
+
+
+
     prefix = "  " * indent
 
     print(
@@ -456,9 +456,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
         f"待匹配消息迹={format_trace(trace)}"
     )
 
-    # ------------------------------------------------------------
-    # 7.1 接收消息 ?m
-    # ------------------------------------------------------------
+
+
+
     if node.op == "recv":
         if len(trace) == 0:
             print(f"{prefix}  接收节点 ?{node.msg} 匹配 ε：消息未到达，形成合法阻塞前缀")
@@ -487,9 +487,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
         print(f"{prefix}离开节点 {node.label()}：{result.text()}")
         return result
 
-    # ------------------------------------------------------------
-    # 7.2 发送消息 !m
-    # ------------------------------------------------------------
+
+
+
     if node.op == "send":
         if len(trace) == 1 and trace[0] == node.msg:
             print(f"{prefix}  发送节点 !{node.msg} 匹配 {trace[0]}：成功发送，未阻塞")
@@ -516,9 +516,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
         print(f"{prefix}离开节点 {node.label()}：{result.text()}")
         return result
 
-    # ------------------------------------------------------------
-    # 7.3 顺序结构 XY
-    # ------------------------------------------------------------
+
+
+
     if node.op == "seq":
         print(f"{prefix}  当前节点是顺序结构，需要从左到右依次匹配各个子结构")
 
@@ -539,7 +539,7 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
             child_path = f"{path}/{idx}"
             print(f"{prefix}  开始匹配第 {idx} 个顺序子结构：{child.label()}")
 
-            # 如果前面的结构已经阻塞，则后续结构不能再消费消息。
+
             if already_blocked:
                 if len(seg) == 0:
                     print(
@@ -554,7 +554,7 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
                 )
                 print(f"{prefix}    {reason}")
 
-                # 只返回更靠近树底的当前子节点，不返回外层 SEQ。
+
                 failed_child = make_failed_node(child, child_path, seg, reason)
                 result = MatchResult(
                     matched=False,
@@ -572,8 +572,8 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
                     f"因此顺序结构匹配失败"
                 )
 
-                # 子节点已经给出了更靠近树底的失败节点，
-                # 外层 SEQ 不再加入失败列表。
+
+
                 result = MatchResult(
                     matched=False,
                     blocked=False,
@@ -598,9 +598,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
         print(f"{prefix}离开节点 {node.label()}：{result.text()}")
         return result
 
-    # ------------------------------------------------------------
-    # 7.4 选择结构 X + Y
-    # ------------------------------------------------------------
+
+
+
     if node.op == "choice":
         print(f"{prefix}  当前节点是选择结构，只需选择一个能够匹配的分支")
 
@@ -638,8 +638,8 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
                     f"该分支结果为：{child_result.text()}"
                 )
 
-                # 只要某个分支匹配成功，选择结构就是成功。
-                # 其他候选分支失败不作为最终失败节点。
+
+
                 result = MatchResult(
                     matched=True,
                     blocked=child_result.blocked
@@ -656,8 +656,8 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
             )
             print(f"{prefix}  {reason}")
 
-            # 没有候选分支时，无法定位到更深子节点，
-            # 因此当前 CHOICE 是最具体的可诊断失败节点。
+
+
             failed_choice = make_failed_node(node, path, trace, reason)
             result = MatchResult(
                 matched=False,
@@ -669,7 +669,7 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
 
         print(f"{prefix}  所有候选选择分支均匹配失败")
 
-        # 只返回候选分支中更靠近树底的失败节点，不返回当前 CHOICE。
+
         result = MatchResult(
             matched=False,
             blocked=False,
@@ -678,9 +678,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
         print(f"{prefix}离开节点 {node.label()}：{result.text()}")
         return result
 
-    # ------------------------------------------------------------
-    # 7.5 并行结构 X || Y
-    # ------------------------------------------------------------
+
+
+
     if node.op == "par":
         print(f"{prefix}  当前节点是并行结构，需要按照各分支消息集合对消息迹进行投影划分")
 
@@ -692,8 +692,8 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
             )
             print(f"{prefix}  {reason}")
 
-            # 无法把未知消息定位到某个具体分支，
-            # 因此当前 PAR 是最具体的可诊断失败节点。
+
+
             failed_par = make_failed_node(node, path, trace, reason)
             result = MatchResult(
                 matched=False,
@@ -727,7 +727,7 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
                     f"因此整个并行结构匹配失败"
                 )
 
-                # 只返回失败分支中的底层失败节点，不返回当前 PAR。
+
                 all_branch_failures.extend(child_result.failed_nodes)
 
             elif child_result.blocked:
@@ -761,9 +761,9 @@ def match(node: Node, trace: List[str], indent: int = 0, path: str = "root") -> 
     raise ValueError(f"未知节点类型: {node.op}")
 
 
-# ============================================================
-# 8. 主函数
-# ============================================================
+
+
+
 
 def match_message_pattern(expr: str, trace_str: str) -> MatchResult:
     print("=" * 80)
@@ -797,12 +797,12 @@ def match_message_pattern(expr: str, trace_str: str) -> MatchResult:
     return result
 
 
-# ============================================================
-# 9. 示例运行
-# ============================================================
+
+
+
 
 if __name__ == "__main__":
-    # 示例 1：合法阻塞前缀
+
     expr1 = "?A!B(?C||!D+!E)!F"
     trace1 = "ABDE"
 

@@ -65,11 +65,11 @@ def _split_directional_token(
     sends: frozenset[str],
     receives: frozenset[str],
 ) -> tuple[str, str | None]:
-    """Interpret ``_s``/``_r`` only when the base is a known message.
 
-    This avoids corrupting a legitimate raw message whose name happens to end
-    in ``_s`` or ``_r``.
-    """
+
+
+
+
 
     if token.endswith("_s") and token[:-2] in sends | receives:
         return token[:-2], "send"
@@ -83,12 +83,12 @@ def project_global_trace(
     sends: frozenset[str],
     receives: frozenset[str],
 ) -> Trace:
-    """Project a global trace onto one participant (Definitions 7.3-7.4).
 
-    Raw tokens are retained when visible to the participant.  Directional
-    tokens are retained only for the matching sender/receiver endpoint and the
-    suffix is removed before message-pattern matching.
-    """
+
+
+
+
+
 
     visible = sends | receives
     projected: list[str] = []

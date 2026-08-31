@@ -36,7 +36,7 @@ def _new_id(existing: set[str], base: str) -> str:
 
 
 def normalise_collaboration(source: Path, destination: Path) -> Path:
-    """Create a PM4Py-friendly copy without changing the user's BPMN file."""
+
 
     tree = ET.parse(source)
     root = tree.getroot()
@@ -172,14 +172,14 @@ def _convert_pm4py_tree(process_tree, endpoint_to_message: dict[str, str]) -> No
 
 
 class _ReducedTreeParser:
-    """Parse PM4Py's reduced WF-net label when its generic parser fails.
 
-    PM4Py 2.7.19 can reduce a sound, block-structured WF-net to one correctly
-    labelled transition and still raise ``AssertionError`` while parsing a
-    deeply nested label.  This small parser supports exactly the Chapter 7
-    subset: sequence (``->``), XOR (``X``), parallel (``+``), quoted activity
-    labels and tau.  It deliberately rejects loops, OR and interleaving.
-    """
+
+
+
+
+
+
+
 
     def __init__(self, expression: str, endpoint_to_message: dict[str, str]) -> None:
         self.expression = expression
@@ -279,7 +279,7 @@ class _ReducedTreeParser:
 
 
 def _convert_reduced_wf_net(bpmn_graph, endpoint_to_message: dict[str, str]) -> Node:
-    """Use PM4Py's successful WF-net reduction but parse its label robustly."""
+
 
     import pm4py
     from pm4py.objects.conversion.wf_net.variants import to_process_tree
@@ -302,7 +302,7 @@ def load_process_models(
     *,
     normalised_name: str = "collaboration.normalized.bpmn",
 ) -> tuple[Path, list[ProcessModel]]:
-    """Normalise a collaboration and convert every participant to a message tree."""
+
 
     import pm4py
 

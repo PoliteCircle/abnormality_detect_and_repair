@@ -2,13 +2,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Tuple, Union
 
-# ============================================================
-# AST 定义（论文表达式）
-#  Leaf("M1") ：叶子节点（这里我们最终会让叶子是消息名 M1/M2...）
-#  OpNode(".", (...)) ：顺序结构
-#  OpNode("+", (...)) ：选择结构
-#  OpNode("|", (...)) ：并行结构
-# ============================================================
+
+
+
+
+
+
+
 
 @dataclass(frozen=True)
 class Leaf:
@@ -16,18 +16,18 @@ class Leaf:
 
 @dataclass(frozen=True)
 class OpNode:
-    op: str  # '.', '+', '|'
+    op: str
     children: Tuple["Expr", ...]
 
 Expr = Union[Leaf, OpNode]
 
 
-# ============================================================
-# Parser：解析形如 .(A,B,|(C,+(D,E))) 的表达式为 AST
-# 说明：
-#   - 这里只支持 name token = [0-9A-Za-z_]+
-#   - 所以我们会对 BPMN 的 name 做 normalize
-# ============================================================
+
+
+
+
+
+
 
 class Parser:
     def __init__(self, s: str):

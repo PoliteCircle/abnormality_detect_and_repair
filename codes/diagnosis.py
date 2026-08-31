@@ -69,7 +69,7 @@ class _PreSplit:
 
 
 def _pre_split(node: Node, trace: Trace) -> _PreSplit:
-    """Apply the structural pre-splitting rules from Chapter 7 Table 7-4."""
+
 
     if node.operator == "tau":
         return _PreSplit(not trace, "tau matches empty trace" if not trace else "tau cannot consume messages")
@@ -148,7 +148,7 @@ def find_minimal_abnormal_structures(
     line_number: int,
     global_trace: Trace,
 ) -> DiagnosisResult:
-    """Run Algorithm 6 and retain every intermediate pre-splitting decision."""
+
 
     records: list[MinimalAbnormalStructure] = []
     steps: list[SplitStep] = []
@@ -211,12 +211,12 @@ def build_repair_scopes(
     root: Node,
     records: Iterable[MinimalAbnormalStructure],
 ) -> tuple[RepairScope, ...]:
-    """Group equal MinAS nodes and merge siblings at their minimal ancestor.
 
-    The merged scope implements Definition 7.16.  For every scope, the trace
-    used for repair is the original abnormal process trace projected onto the
-    scope's message set.
-    """
+
+
+
+
+
 
     items = list(records)
     if not items:
@@ -264,7 +264,7 @@ def build_repair_scopes(
             RepairScope(
                 path=path,
                 node=node,
-                kind=kind,  # type: ignore[arg-type]
+                kind=kind,  
                 observations=tuple(observations),
                 source_paths=tuple(sorted({item.path for item in grouped})),
                 source_indices=tuple(sorted({item.source_index for item in grouped})),

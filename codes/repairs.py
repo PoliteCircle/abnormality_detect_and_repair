@@ -238,7 +238,7 @@ def generate_repair_candidates(
     abnormal_traces: Iterable[Trace],
     behavior_limit: int = 20_000,
 ) -> tuple[RepairCandidate, ...]:
-    """Generate Table 7-5 candidates and verify their effects exactly on logs."""
+
 
     normals = tuple(normal_traces)
     abnormals = tuple(abnormal_traces)

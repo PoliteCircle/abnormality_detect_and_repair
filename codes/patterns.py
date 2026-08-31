@@ -78,12 +78,12 @@ def enumerate_patterns(
     *,
     limit: int = 10_000,
 ) -> PatternEnumeration:
-    """Apply Chapter 7 Table 7-3 (closed/open message-pattern rules).
 
-    The returned sets are for explanation only and may be bounded.  Detection
-    always uses :func:`accepted_modes`, which is exact and never relies on a
-    truncated enumeration.
-    """
+
+
+
+
+
 
     if limit < 1:
         raise ValueError("pattern limit must be positive")
@@ -121,7 +121,7 @@ def enumerate_patterns(
                 opened,
                 truncated or cut1 or cut2 or cut3 or cut4 or cut5,
             )
-        else:  # pragma: no cover - Node validates this
+        else:  
             raise ValueError(f"unsupported operator: {node.operator}")
     return result
 
@@ -132,7 +132,7 @@ def accepted_modes(
     sends: frozenset[str],
     receives: frozenset[str],
 ) -> frozenset[Mode]:
-    """Return the exact closed/open states in which ``node`` accepts ``trace``."""
+
 
     @lru_cache(maxsize=None)
     def solve(current: Node, current_trace: Trace) -> frozenset[Mode]:
