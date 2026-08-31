@@ -1,10 +1,10 @@
-# PAIS 跨组织协作异常检测与修复实验
+# 跨组织协作异常检测与修复实验
 
-本仓库实现论文第 7 章的可复现实验流程：从 BPMN collaboration 模型和全局交互日志中检测潜在异常子流程，定位最小异常结构（MinAS），生成候选修复方案，并依据论文定义复验修复效果。
+本仓库提供一套独立的可复现实验流程：从 BPMN collaboration 模型和全局交互日志中检测潜在异常子流程，定位最小异常结构（MinAS），生成候选修复方案，并复验修复效果。
 
 ## 实验流程
 
-程序依次完成 BPMN 规范化、participant 子流程拆分、消息流程树构建、closed/open 消息模式计算、全局日志投影、异常子流程锁定、MinAS 求解、Definition 7.16 合并、表 7-5 修复生成和 Definition 7.17 严格复验。
+程序依次完成 BPMN 规范化、participant 子流程拆分、消息流程树构建、closed/open 消息模式计算、全局日志投影、异常子流程锁定、MinAS 求解、异常结构合并、修复生成和严格行为复验。
 
 原始 BPMN 和日志不会被修改。规范化 BPMN、拆分 process、运行时文件和 JSON 报告写入 `output/` 或命令指定的输出目录。
 
@@ -12,7 +12,7 @@
 
 ```text
 main.py                         命令行入口
-chapter7/                       第 7 章分析模块
+analysis/                       核心分析模块
 experiments/                    BPMN、全局日志和扩展基准清单
 generated_bpmn/                 规范化 BPMN 示例
 scripts/                        基准生成、验证和性能测试脚本
@@ -21,7 +21,7 @@ legacy/                         早期原型脚本，仅供历史对照
 output/                         运行时文件和分析报告
 ```
 
-主线实验代码统一位于 `chapter7/`。`legacy/` 中的脚本保留历史实现，不参与主线命令、扩展基准和测试。
+主线实验代码统一位于 `analysis/`。`legacy/` 中的脚本保留历史实现，不参与主线命令、扩展基准和测试。
 
 ## 环境配置
 
@@ -97,12 +97,12 @@ M1,M2,M3
 --output-dir PATH              指定输出目录
 --report-name NAME             指定 JSON 报告文件名
 --pattern-limit N              消息模式展示上限，默认 10000
---behavior-limit N             Definition 7.17 枚举上限，默认 20000
+--behavior-limit N             行为验证的枚举上限，默认 20000
 --summary                      隐藏逐节点预分割细节
 --no-json                      不写 JSON 报告
 ```
 
-`pattern-limit` 只限制模式展示数量，不改变精确检测结果。`behavior-limit` 达到上限时，Definition 7.17 结果可能为“未知”，应提高上限后重新运行。默认报告路径为 `output/<case>/<log-file-without-extension>/analysis-report.json`。
+`pattern-limit` 只限制模式展示数量，不改变精确检测结果。`behavior-limit` 达到上限时，行为验证结果可能为“未知”，应提高上限后重新运行。默认报告路径为 `output/<case>/<log-file-without-extension>/analysis-report.json`。
 
 ## 逐案例实验
 
@@ -166,13 +166,13 @@ foreach ($case in Get-ChildItem experiments -Directory) {
 | `patterns` | closed/open 消息模式 |
 | `trace_checks` | 全局轨迹投影和接受结果 |
 | `diagnoses` | 预分割步骤与 MinAS |
-| `scopes` | Definition 7.16 合并后的修复范围 |
-| `candidates` | 表 7-5 候选修复及验证结果 |
-| `definition_7_17_satisfied` | 是否满足严格行为定义 |
+| `scopes` | 合并后的修复范围 |
+| `candidates` | 候选修复及验证结果 |
+| `behavior_satisfied` | 是否满足严格行为约束 |
 | `normal_log` / `abnormal_log` | 修复后正常、异常日志通过数量 |
 | `summary` | 子流程数、异常子流程数和耗时 |
 
-严格修复的判据为 `definition_7_17_satisfied == true`，且修复后正常日志全部通过、异常日志全部通过。结果为 `null` 或“未知”时，表示行为枚举达到上限，不能作为已证明的严格修复。
+严格修复的判据为 `behavior_satisfied == true`，且修复后正常日志全部通过、异常日志全部通过。结果为 `null` 或“未知”时，表示行为枚举达到上限，不能作为已证明的严格修复。
 
 ## 基线规模与验收标准
 
@@ -198,7 +198,7 @@ foreach ($case in Get-ChildItem experiments -Directory) {
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-测试覆盖 BPMN 解析回退、日志投影、表 7-3 消息模式、MinAS 诊断、表 7-5 修复候选、既有案例端到端流程和扩展基准清单。验证脚本与测试建议串行执行，避免同时写入 `output/` 或临时目录。
+测试覆盖 BPMN 解析回退、日志投影、消息模式、MinAS 诊断、修复候选、既有案例端到端流程和扩展基准清单。验证脚本与测试建议串行执行，避免同时写入 `output/` 或临时目录。
 
 ## 实验记录
 

@@ -16,7 +16,7 @@ from .reporting import print_report
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="按论文第7章检测潜在异常子流程、求解 MinAS 并生成潜在修复方案。",
+        description="检测潜在异常子流程、求解 MinAS 并生成潜在修复方案。",
     )
     parser.add_argument("--list", action="store_true", help="列出 experiments 下所有可选 BPMN 与日志")
     parser.add_argument("--case", help="experiments 下的案例目录名；省略全部输入参数时进入交互选择")
@@ -28,7 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", type=Path, help="运行时文件和 JSON 报告目录")
     parser.add_argument("--report-name", default="analysis-report.json", help="JSON 报告文件名")
     parser.add_argument("--pattern-limit", type=int, default=10_000, help="每类展示消息模式的上限")
-    parser.add_argument("--behavior-limit", type=int, default=20_000, help="验证 Definition 7.17 的枚举上限")
+    parser.add_argument("--behavior-limit", type=int, default=20_000, help="行为验证的枚举上限")
     parser.add_argument("--summary", action="store_true", help="隐藏逐节点预分割细节")
     parser.add_argument("--no-json", action="store_true", help="不写 JSON 详细报告")
     return parser

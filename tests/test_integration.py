@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from chapter7.pipeline import run_analysis
+from analysis.pipeline import run_analysis
 
 
 class RepositoryIntegrationTests(unittest.TestCase):
@@ -36,7 +36,7 @@ class RepositoryIntegrationTests(unittest.TestCase):
             }
             self.assertIn(8, rules)
 
-    def test_paper_port_order_anomaly_prefers_parallel_repair(self) -> None:
+    def test_port_order_anomaly_prefers_parallel_repair(self) -> None:
         root = Path(__file__).resolve().parents[1]
         case = root / "experiments" / "qingdao_port_simple"
         with tempfile.TemporaryDirectory() as directory:
@@ -59,7 +59,7 @@ class RepositoryIntegrationTests(unittest.TestCase):
             )
             self.assertEqual(best.before_expression, ".(M2,M3)")
             self.assertEqual(best.after_expression, "|(M2,M3)")
-            self.assertTrue(best.definition_717_satisfied)
+            self.assertTrue(best.behavior_satisfied)
             self.assertEqual(best.normal_after_pass, best.normal_total)
             self.assertEqual(best.abnormal_after_pass, best.abnormal_total)
 

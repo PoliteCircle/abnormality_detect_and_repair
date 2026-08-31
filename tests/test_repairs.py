@@ -3,9 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from chapter7.diagnosis import RepairScope
-from chapter7.model import Node, ProcessModel
-from chapter7.repairs import generate_repair_candidates
+from analysis.diagnosis import RepairScope
+from analysis.model import Node, ProcessModel
+from analysis.repairs import generate_repair_candidates
 
 
 def model_for(tree: Node, sends=(), receives=()) -> ProcessModel:
@@ -33,7 +33,7 @@ class RepairTests(unittest.TestCase):
         )
         optional = next(candidate for candidate in candidates if candidate.rule_id == 2)
         self.assertEqual(optional.after_expression, "+(A,tau)")
-        self.assertTrue(optional.definition_717_satisfied)
+        self.assertTrue(optional.behavior_satisfied)
         self.assertEqual(optional.normal_after_pass, 1)
         self.assertEqual(optional.abnormal_after_pass, 1)
 
@@ -49,11 +49,11 @@ class RepairTests(unittest.TestCase):
         )
         rule5 = next(candidate for candidate in candidates if candidate.rule_id == 5)
         self.assertEqual(rule5.after_expression, "|(A,B)")
-        self.assertTrue(rule5.definition_717_satisfied)
+        self.assertTrue(rule5.behavior_satisfied)
         self.assertEqual(rule5.normal_after_pass, 1)
         self.assertEqual(rule5.abnormal_after_pass, 1)
 
-    def test_rule_12_parallel_to_choice_for_paper_sibling_fragments(self) -> None:
+    def test_rule_12_parallel_to_choice_for_sibling_fragments(self) -> None:
         tree = Node.composite("parallel", (Node.leaf("M7"), Node.leaf("M5")))
         model = model_for(tree, receives=("M7", "M5"))
         scope = RepairScope((), tree, "merged", (("M7",), ("M5",)), ((0,), (1,)), (1, 2))

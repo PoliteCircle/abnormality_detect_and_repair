@@ -166,7 +166,7 @@ def _convert_pm4py_tree(process_tree, endpoint_to_message: dict[str, str]) -> No
     if process_tree.operator == Operator.PARALLEL:
         return Node.composite("parallel", children)
     raise UnsupportedModelError(
-        "Chapter 7 requires a structured, acyclic process in which every activity occurs once; "
+        "the process must be structured and acyclic, with every activity occurring once; "
         f"PM4Py produced unsupported operator {process_tree.operator!s}."
     )
 
@@ -255,7 +255,7 @@ class _ReducedTreeParser:
             )
         if operator in {"*", "O", "<>"}:
             raise UnsupportedModelError(
-                f"Chapter 7 does not support reduced process-tree operator {operator!r}"
+                f"reduced process-tree operator {operator!r} is not supported"
             )
 
         self._consume("(")
@@ -335,7 +335,7 @@ def load_process_models(
         name = _normalise_token(raw_name)
         if name in message_names:
             raise ValueError(
-                f"duplicate messageFlow name {name!r}; Chapter 7 requires unique message activities"
+                f"duplicate messageFlow name {name!r}; message activity names must be unique"
             )
         message_names.add(name)
         for endpoint in (source, target):
@@ -371,7 +371,7 @@ def load_process_models(
             tree = simplify(_convert_reduced_wf_net(bpmn_graph, endpoint_to_message))
             conversion_warnings = (
                 "PM4Py reduced the sound WF-net but its generic tree parser failed; "
-                "used the Chapter 7 seq/XOR/parallel fallback parser.",
+                "used the seq/XOR/parallel fallback parser.",
             )
         validate_unique_messages(tree)
         sends, receives = directions[process_id]

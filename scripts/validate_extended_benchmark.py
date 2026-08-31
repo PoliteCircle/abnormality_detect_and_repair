@@ -14,9 +14,9 @@ if str(REPOSITORY_ROOT) not in sys.path:
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-from chapter7.bpmn import load_process_models
-from chapter7.logs import load_global_log
-from chapter7.pipeline import run_analysis
+from analysis.bpmn import load_process_models
+from analysis.logs import load_global_log
+from analysis.pipeline import run_analysis
 from scripts.generate_extended_benchmark import _evaluate_dataset
 
 
@@ -34,7 +34,7 @@ def _strict_report_success(report) -> bool:
         return False
     for scope in scopes:
         if not any(
-            candidate.definition_717_satisfied is True
+            candidate.behavior_satisfied is True
             and candidate.normal_after_pass == candidate.normal_total
             and candidate.abnormal_after_pass == candidate.abnormal_total
             for candidate in scope.candidates
@@ -79,7 +79,7 @@ def main(argv: list[str] | None = None) -> int:
     anomaly_counts: Counter[str] = Counter()
     origin_counts: Counter[str] = Counter()
 
-    with tempfile.TemporaryDirectory(prefix="pais-benchmark-validation-") as temp:
+    with tempfile.TemporaryDirectory(prefix="workflow-benchmark-validation-") as temp:
         runtime_root = Path(temp)
         for case_name in sorted(by_case):
             case_entries = by_case[case_name]

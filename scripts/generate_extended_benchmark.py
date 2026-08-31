@@ -18,12 +18,12 @@ if str(REPOSITORY_ROOT) not in sys.path:
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-from chapter7.bpmn import BPMN_NS, load_process_models
-from chapter7.diagnosis import build_repair_scopes, find_minimal_abnormal_structures
-from chapter7.logs import load_global_log, project_global_trace
-from chapter7.model import ProcessModel, Trace, node_to_expression
-from chapter7.patterns import accepts_trace
-from chapter7.repairs import generate_repair_candidates
+from analysis.bpmn import BPMN_NS, load_process_models
+from analysis.diagnosis import build_repair_scopes, find_minimal_abnormal_structures
+from analysis.logs import load_global_log, project_global_trace
+from analysis.model import ProcessModel, Trace, node_to_expression
+from analysis.patterns import accepts_trace
+from analysis.repairs import generate_repair_candidates
 
 
 DEFAULT_SEED = 20260809
@@ -431,7 +431,7 @@ def _evaluate_dataset(
             valid = tuple(
                 candidate
                 for candidate in candidates
-                if candidate.definition_717_satisfied is True
+                if candidate.behavior_satisfied is True
                 and candidate.normal_after_pass == candidate.normal_total
                 and candidate.abnormal_after_pass == candidate.abnormal_total
             )
@@ -871,7 +871,7 @@ def _write_manifest(experiments_dir: Path, entries: list[ManifestEntry], seed: i
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="生成可复现、带异常注入真值且经当前第7章算法严格验证的扩展实验基准。"
+        description="生成可复现、带异常注入真值且经当前检测与修复流程严格验证的扩展实验基准。"
     )
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED, help="固定随机种子")
     parser.add_argument(
@@ -901,7 +901,7 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("每个案例的日志数必须是正整数")
     experiments_dir = args.experiments_dir.resolve()
     experiments_dir.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="pais-benchmark-") as temp:
+    with tempfile.TemporaryDirectory(prefix="workflow-benchmark-") as temp:
         runtime_root = Path(temp)
         entries = _generate_synthetic_cases(
             experiments_dir,

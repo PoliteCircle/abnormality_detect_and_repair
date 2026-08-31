@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from chapter7.bpmn import UnsupportedModelError, _ReducedTreeParser
-from chapter7.model import node_to_expression
+from analysis.bpmn import UnsupportedModelError, _ReducedTreeParser
+from analysis.model import node_to_expression
 
 
 class ReducedTreeFallbackTests(unittest.TestCase):

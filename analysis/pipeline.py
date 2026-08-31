@@ -225,7 +225,7 @@ def _step_to_dict(step: SplitStep) -> dict[str, Any]:
 
 def _candidate_to_dict(candidate: RepairCandidate) -> dict[str, Any]:
     return {
-        "table_7_5_rule": candidate.rule_id,
+        "repair_rule": candidate.rule_id,
         "title": candidate.title,
         "rationale": candidate.rationale,
         "scope_path": path_to_string(candidate.scope_path),
@@ -247,7 +247,7 @@ def _candidate_to_dict(candidate: RepairCandidate) -> dict[str, Any]:
             "after_pass": candidate.abnormal_after_pass,
             "total": candidate.abnormal_total,
         },
-        "definition_7_17_satisfied": candidate.definition_717_satisfied,
+        "behavior_satisfied": candidate.behavior_satisfied,
         "warnings": list(candidate.warnings),
     }
 

@@ -19,8 +19,8 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import pm4py
 
-from chapter7.bpmn import load_process_models
-from chapter7.pipeline import run_analysis
+from analysis.bpmn import load_process_models
+from analysis.pipeline import run_analysis
 from scripts.validate_extended_benchmark import _strict_report_success
 
 
@@ -68,7 +68,7 @@ def main(argv: list[str] | None = None) -> int:
 
     raw_runs: list[dict] = []
     summaries: list[dict] = []
-    with tempfile.TemporaryDirectory(prefix="pais-scale-warmup-") as temp:
+    with tempfile.TemporaryDirectory(prefix="workflow-scale-warmup-") as temp:
         first_entry = sorted(synthetic, key=lambda item: item["case"])[0]
         load_process_models(
             REPOSITORY_ROOT / first_entry["bpmn_file"],

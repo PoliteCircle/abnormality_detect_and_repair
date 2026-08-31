@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import unittest
 
-from chapter7.model import Node
-from chapter7.patterns import accepts_trace, enumerate_patterns
+from analysis.model import Node
+from analysis.patterns import accepts_trace, enumerate_patterns
 
 
 class MessagePatternTests(unittest.TestCase):
-    def test_paper_agency_pattern(self) -> None:
+    def test_agency_pattern(self) -> None:
         tree = Node.composite(
             "seq",
             tuple(Node.leaf(name) for name in ("M1", "M2", "M5", "M3", "M6", "M7", "M8")),
@@ -24,7 +24,7 @@ class MessagePatternTests(unittest.TestCase):
             },
         )
 
-    def test_paper_port_pattern_has_thirteen_traces(self) -> None:
+    def test_port_pattern_has_thirteen_traces(self) -> None:
         tree = Node.composite(
             "seq",
             (

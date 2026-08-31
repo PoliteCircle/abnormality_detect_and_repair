@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from chapter7.logs import project_global_trace
+from analysis.logs import project_global_trace
 
 
 class ProjectionTests(unittest.TestCase):

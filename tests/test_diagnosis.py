@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from chapter7.diagnosis import build_repair_scopes, find_minimal_abnormal_structures
-from chapter7.model import Node, node_to_expression
+from analysis.diagnosis import build_repair_scopes, find_minimal_abnormal_structures
+from analysis.model import Node, node_to_expression
 
 
 class MinimalAbnormalStructureTests(unittest.TestCase):
@@ -26,7 +26,7 @@ class MinimalAbnormalStructureTests(unittest.TestCase):
             global_trace=trace,
         )
 
-    def test_paper_missing_parallel_branch_returns_leaf_m5(self) -> None:
+    def test_missing_parallel_branch_returns_leaf_m5(self) -> None:
         result = self.diagnose(("M4", "M6", "M7", "M8"))
         self.assertEqual(
             [node_to_expression(item.node) for item in result.minimal_structures],
@@ -34,7 +34,7 @@ class MinimalAbnormalStructureTests(unittest.TestCase):
         )
         self.assertEqual(result.minimal_structures[0].assigned_trace, ())
 
-    def test_definition_7_16_merges_sibling_minas(self) -> None:
+    def test_merges_sibling_minas(self) -> None:
         first = self.diagnose(("M4", "M6", "M7", "M8"), 1)
         second = self.diagnose(("M4", "M6", "M5", "M8"), 2)
         records = first.minimal_structures + second.minimal_structures

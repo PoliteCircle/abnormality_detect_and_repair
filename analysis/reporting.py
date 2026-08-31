@@ -26,7 +26,7 @@ def _location(path, child_slice=None) -> str:
 
 def print_report(report: AnalysisReport, *, detailed: bool = True) -> None:
     print("\n" + "=" * 96)
-    print("第7章：外部协作异常相容性的检测及修复")
+    print("外部协作异常相容性的检测及修复")
     print("=" * 96)
     print("[输入确认]")
     print(f"  BPMN : {report.inputs.bpmn_path}")
@@ -55,14 +55,14 @@ def print_report(report: AnalysisReport, *, detailed: bool = True) -> None:
                 print("    " + line)
 
         marker = "（达到展示上限，已截断）" if analysis.patterns.truncated else "（完整）"
-        print("\n  [7.1.1 消息模式]")
+        print("\n  [消息模式]")
         print(
             f"    closed={len(analysis.patterns.closed)}, open={len(analysis.patterns.open)} {marker}"
         )
         print(f"    closed sample: {_sample(analysis.patterns.closed)}")
         print(f"    open sample  : {_sample(analysis.patterns.open)}")
 
-        print("\n  [7.1.2 锁定潜在异常子流程]")
+        print("\n  [异常子流程检测]")
         for check in analysis.checks:
             status = (
                 "合法（" + "/".join(check.accepted_modes) + "）"
@@ -79,8 +79,8 @@ def print_report(report: AnalysisReport, *, detailed: bool = True) -> None:
             print("    结论：该子流程不是潜在异常子流程。")
             continue
 
-        print("    结论：该子流程被锁定；下面仅对异常投影执行 Algorithm 6。")
-        print("\n  [7.2 求解最小异常结构]")
+        print("    结论：该子流程被锁定，下面对异常投影执行细粒度诊断。")
+        print("\n  [最小异常结构]")
         for diagnosis in analysis.diagnoses:
             check = diagnosis.check
             print(
@@ -106,34 +106,34 @@ def print_report(report: AnalysisReport, *, detailed: bool = True) -> None:
                 )
                 print(f"        原因: {item.reason}")
 
-        print("\n  [7.3 合并异常结构并求解潜在修复方案]")
+        print("\n  [异常结构合并与修复方案]")
         for scope_analysis in analysis.scopes:
             scope = scope_analysis.scope
-            label = "Definition 7.16 合并结构" if scope.kind == "merged" else "单个/同路径 MinAS"
+            label = "合并结构" if scope.kind == "merged" else "单个/同路径 MinAS"
             print(
                 f"    scope={_location(scope.path, scope.child_slice)} ({label}), "
                 f"node={node_to_expression(scope.node)}"
             )
             print(f"      异常片段={[_fmt_trace(trace) for trace in scope.observations]}")
             if not scope_analysis.candidates:
-                print("      表7-5没有与该结构形态完全对应的简洁候选；保留为人工分析项。")
+                print("      没有与该结构形态完全对应的简洁候选；保留为人工分析项。")
                 continue
             for rank, candidate in enumerate(scope_analysis.candidates, start=1):
                 proof = (
                     "满足"
-                    if candidate.definition_717_satisfied is True
+                    if candidate.behavior_satisfied is True
                     else "不满足"
-                    if candidate.definition_717_satisfied is False
+                    if candidate.behavior_satisfied is False
                     else "未知（枚举达到上限）"
                 )
                 print(
-                    f"      candidate#{rank} / 表7-5方案{candidate.rule_id}: {candidate.title}"
+                    f"      candidate#{rank} / 规则{candidate.rule_id}: {candidate.title}"
                 )
                 print(f"        替换: {candidate.before_expression} -> {candidate.after_expression}")
                 print(f"        理由: {candidate.rationale}")
                 print(
                     f"        异常片段覆盖: {candidate.scope_observations_covered}/"
-                    f"{candidate.scope_observations_total}; Definition 7.17: {proof}"
+                    f"{candidate.scope_observations_total}; 行为约束检查: {proof}"
                 )
                 print(
                     f"        完整流程复验: normal {candidate.normal_after_pass}/{candidate.normal_total}, "

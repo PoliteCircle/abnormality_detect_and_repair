@@ -200,7 +200,7 @@ def validate_unique_messages(root: Node) -> None:
     duplicates = sorted(name for name, count in occurrences.items() if count > 1)
     if duplicates:
         raise ValueError(
-            "Chapter 7 assumes that each message activity occurs once; duplicate tree leaves: "
+            "each message activity must occur once; duplicate tree leaves: "
             + ", ".join(duplicates)
         )
 

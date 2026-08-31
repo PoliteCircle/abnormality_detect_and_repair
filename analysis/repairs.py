@@ -34,7 +34,7 @@ class RepairCandidate:
     normal_total: int
     abnormal_after_pass: int
     abnormal_total: int
-    definition_717_satisfied: bool | None
+    behavior_satisfied: bool | None
     warnings: tuple[str, ...] = ()
     scope_child_slice: tuple[int, int] | None = None
 
@@ -86,7 +86,7 @@ def _raw_candidates(
                 _RawCandidate(
                     1,
                     "删除未出现的消息活动",
-                    "表7-5方案1：该消息在异常片段中完全缺失，以 tau 替换该活动。",
+                    "规则1：该消息在异常片段中完全缺失，以 tau 替换该活动。",
                     Node.tau(),
                     1,
                 )
@@ -96,7 +96,7 @@ def _raw_candidates(
                 _RawCandidate(
                     2,
                     "把消息活动改为可选",
-                    "表7-5方案2：该消息有时出现、有时缺失，增加 XOR(tau) 分支。",
+                    "规则2：该消息有时出现、有时缺失，增加 XOR(tau) 分支。",
                     Node.composite("choice", (node, Node.tau())),
                     2,
                 )
@@ -127,14 +127,14 @@ def _raw_candidates(
     if node.operator == "seq":
         if empty_only:
             candidates.append(
-                _RawCandidate(3, "删除空顺序块", "表7-5方案3：整个顺序结构未发生。", Node.tau(), 2)
+                _RawCandidate(3, "删除空顺序块", "规则3：整个顺序结构未发生。", Node.tau(), 2)
             )
         if len(node.children) >= 2 and reverse in orders and nominal not in orders:
             candidates.append(
                 _RawCandidate(
                     4,
                     "反转顺序结构",
-                    "表7-5方案4：日志只显示与模型相反的稳定次序。",
+                    "规则4：日志只显示与模型相反的稳定次序。",
                     Node.composite("seq", tuple(reversed(node.children))),
                     2,
                 )
@@ -144,7 +144,7 @@ def _raw_candidates(
                 _RawCandidate(
                     5,
                     "顺序改为并行",
-                    "表7-5方案5：两个方向的次序都出现，说明两个分支可能并行。",
+                    "规则5：两个方向的次序都出现，说明两个分支可能并行。",
                     Node.composite("parallel", node.children),
                     2,
                 )
@@ -155,7 +155,7 @@ def _raw_candidates(
                 _RawCandidate(
                     6,
                     "顺序改为排他选择",
-                    "表7-5方案6：每次只观察到一个顺序分支，分支可能互斥。",
+                    "规则6：每次只观察到一个顺序分支，分支可能互斥。",
                     Node.composite("choice", selected),
                     3,
                 )
@@ -164,7 +164,7 @@ def _raw_candidates(
     elif node.operator == "choice":
         if empty_only:
             candidates.append(
-                _RawCandidate(7, "删除空选择块", "表7-5方案7：选择结构整体未发生。", Node.tau(), 2)
+                _RawCandidate(7, "删除空选择块", "规则7：选择结构整体未发生。", Node.tau(), 2)
             )
         combined = [order for order in orders if len(set(order)) >= 2]
         if combined:
@@ -172,7 +172,7 @@ def _raw_candidates(
                 _RawCandidate(
                     8,
                     "排他选择改为并行",
-                    "表7-5方案8：同一条消息迹包含多个原本互斥的分支。",
+                    "规则8：同一条消息迹包含多个原本互斥的分支。",
                     Node.composite("parallel", node.children),
                     2,
                 )
@@ -186,7 +186,7 @@ def _raw_candidates(
                     _RawCandidate(
                         9,
                         "排他选择改为顺序",
-                        "表7-5方案9：多个分支在日志中以稳定次序共同出现；顺序可能不唯一。",
+                        "规则9：多个分支在日志中以稳定次序共同出现；顺序可能不唯一。",
                         replacement,
                         2,
                     )
@@ -195,7 +195,7 @@ def _raw_candidates(
     elif node.operator == "parallel":
         if empty_only:
             candidates.append(
-                _RawCandidate(10, "删除空并行块", "表7-5方案10：并行结构整体未发生。", Node.tau(), 2)
+                _RawCandidate(10, "删除空并行块", "规则10：并行结构整体未发生。", Node.tau(), 2)
             )
         nonempty_orders = [order for order in orders if order]
         if nonempty_orders and all(len(set(order)) == 1 for order in nonempty_orders):
@@ -206,7 +206,7 @@ def _raw_candidates(
                     _RawCandidate(
                         11,
                         "裁剪从未出现的并行分支",
-                        "表7-5方案11：所有片段都只包含同一个并行分支。",
+                        "规则11：所有片段都只包含同一个并行分支。",
                         node.children[index],
                         2,
                     )
@@ -217,7 +217,7 @@ def _raw_candidates(
                     _RawCandidate(
                         12,
                         "并行改为排他选择",
-                        "表7-5方案12：不同片段各自只出现一个并行分支。",
+                        "规则12：不同片段各自只出现一个并行分支。",
                         Node.composite("choice", selected),
                         2,
                     )
@@ -288,9 +288,9 @@ def generate_repair_candidates(
             for trace in abnormals
         )
         if model_preserved is None:
-            definition_satisfied: bool | None = None
+            behavior_satisfied_result: bool | None = None
         else:
-            definition_satisfied = model_preserved and covered == len(scope.observations)
+            behavior_satisfied_result = model_preserved and covered == len(scope.observations)
 
         evaluated.append(
             RepairCandidate(
@@ -310,7 +310,7 @@ def generate_repair_candidates(
                 normal_total=len(normals),
                 abnormal_after_pass=abnormal_pass,
                 abnormal_total=len(abnormals),
-                definition_717_satisfied=definition_satisfied,
+                behavior_satisfied=behavior_satisfied_result,
                 warnings=tuple(warnings),
                 scope_child_slice=scope.child_slice,
             )
@@ -320,7 +320,7 @@ def generate_repair_candidates(
         key=lambda candidate: (
             not candidate.preserves_all_observed_normals,
             -candidate.abnormal_after_pass,
-            candidate.definition_717_satisfied is not True,
+            candidate.behavior_satisfied is not True,
             candidate.edit_cost,
             candidate.rule_id,
             candidate.after_expression,

@@ -238,11 +238,11 @@ def suggest_repairs_for_minas_subtree(
         a = minas_subtree.name
         if () in abnormals:
             candidates.append((
-                "表6-5(1/3/7/10)直觉：异常包含空序列，说明该消息可能未发送/未接收；可将其删除为 τ(ε)。",
+                "规则说明：异常包含空序列，说明该消息可能未发送/未接收；可将其删除为 τ(ε)。",
                 Leaf(EPS)
             ))
             candidates.append((
-                "表6-5(2)直觉：有时空有时包含该消息，说明该消息可能处于未暴露的排他/事件分支；可改成 +(a, ε) 使其可选。",
+                "规则说明：有时空有时包含该消息，说明该消息可能处于未暴露的排他/事件分支；可改成 +(a, ε) 使其可选。",
                 OpNode("+", [Leaf(a), Leaf(EPS)])
             ))
 
@@ -250,7 +250,7 @@ def suggest_repairs_for_minas_subtree(
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "." and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
-                "表6-5(3)直觉：整个顺序块在异常里为空，说明这段可能不发生；可将该顺序结构整体替换为 τ(ε)。",
+                "规则说明：整个顺序块在异常里为空，说明这段可能不发生；可将该顺序结构整体替换为 τ(ε)。",
                 Leaf(EPS)
             ))
 
@@ -259,7 +259,7 @@ def suggest_repairs_for_minas_subtree(
         found_swap = any(((t[1], t[0]) in all_obs and (t[1], t[0]) != t) for t in two_len)
         if found_swap:
             candidates.append((
-                "表6-5(5)直觉：观察到同一对消息既有(a,b)也有(b,a)，说明可能存在未暴露并行；可将 '.' 替换为 '|'。",
+                "规则说明：观察到同一对消息既有(a,b)也有(b,a)，说明可能存在未暴露并行；可将 '.' 替换为 '|'。",
                 OpNode("|", list(minas_subtree.children))
             ))
 
@@ -270,7 +270,7 @@ def suggest_repairs_for_minas_subtree(
                     if len(minas_subtree.children) == 2:
                         c0, c1 = minas_subtree.children
                         candidates.append((
-                            "表6-5(4)直觉：正常为(a,b)但异常出现(b,a)，可能是顺序写反；可交换两个子结构顺序。",
+                            "规则说明：正常为(a,b)但异常出现(b,a)，可能是顺序写反；可交换两个子结构顺序。",
                             OpNode(".", [c1, c0])
                         ))
                     break
@@ -279,7 +279,7 @@ def suggest_repairs_for_minas_subtree(
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "+" and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
-                "表6-5(7)直觉：排他/事件网关在异常里为空，说明该结构可能不发生；可将该网关整体替换为 τ(ε)。",
+                "规则说明：排他/事件网关在异常里为空，说明该结构可能不发生；可将该网关整体替换为 τ(ε)。",
                 Leaf(EPS)
             ))
 
@@ -288,7 +288,7 @@ def suggest_repairs_for_minas_subtree(
         found_swap = any(((t[1], t[0]) in all_obs and (t[1], t[0]) != t) for t in two_len)
         if found_swap:
             candidates.append((
-                "表6-5(8)直觉：排他结构却观察到两消息可交错/反序，可能应为并行；可将 '+' 替换为 '|'。",
+                "规则说明：排他结构却观察到两消息可交错/反序，可能应为并行；可将 '+' 替换为 '|'。",
                 OpNode("|", list(minas_subtree.children))
             ))
 
@@ -296,7 +296,7 @@ def suggest_repairs_for_minas_subtree(
     if isinstance(minas_subtree, OpNode) and minas_subtree.op == "|" and len(minas_subtree.children) >= 2:
         if abnormals == {()}:
             candidates.append((
-                "表6-5(10)直觉：并行结构在异常里为空，说明该结构可能不发生；可整体替换为 τ(ε)。",
+                "规则说明：并行结构在异常里为空，说明该结构可能不发生；可整体替换为 τ(ε)。",
                 Leaf(EPS)
             ))
 
@@ -319,7 +319,7 @@ def suggest_repairs_for_minas_subtree(
 
             if (not has_all_msgs_trace) and has_single_branch_trace:
                 candidates.append((
-                    "表6-5(12)直觉：原本并行但观测中只出现其中一条消息，且从未观测到两条同时出现；可能应为排他/事件网关；可将 '|' 替换为 '+'。",
+                    "规则说明：原本并行但观测中只出现其中一条消息，且从未观测到两条同时出现；可能应为排他/事件网关；可将 '|' 替换为 '+'。",
                     OpNode("+", list(minas_subtree.children))
                 ))
             else:
